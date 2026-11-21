@@ -20,13 +20,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-# Copy files if uploaded directly, otherwise auto-clone from GitHub
+# Copy backend files
 COPY . .
-RUN if [ ! -f artisan ]; then \
-        git clone https://github.com/hamna019/careerpath-ai.git /tmp/repo && \
-        cp -r /tmp/repo/backend/* /app/ && \
-        rm -rf /tmp/repo; \
-    fi
 
 # Install production PHP dependencies
 RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
@@ -45,7 +40,7 @@ RUN if [ -f .env.example ]; then cp .env.example .env; else touch .env; fi && \
 # Set directory permissions for Laravel
 RUN chmod -R 777 storage bootstrap/cache database
 
-EXPOSE 7860
+EXPOSE 8000
 
-# Run migrations & serve on Hugging Face default port 7860
-CMD sh -c "php artisan config:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=7860"
+# Run migrations & serve dynamically on platform PORT
+CMD sh -c "php artisan config:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=\${PORT:-8000}"
