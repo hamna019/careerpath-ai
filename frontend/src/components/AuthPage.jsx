@@ -1,0 +1,816 @@
+import { useState, useEffect, useRef } from 'react';
+import { Eye, EyeOff, XCircle, CheckCircle2, ChevronDown, Search } from 'lucide-react';
+import axios from 'axios';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
+import AuthImage from '../assets/Authentication.PNG';
+import EmailSuggestion from './EmailSuggestion'; 
+
+export default function AuthPage({ mode, setMode, onBackHome, onForgotPassword }) {
+  const [role, setRole] = useState('student'); 
+  const [showPass, setShowPass] = useState(false);
+  const [showConfirmPass, setShowConfirmPass] = useState(false);
+  const [showAdminPass, setShowAdminPass] = useState(false);
+  
+  const [countriesList, setCountriesList] = useState([]);
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    country_code: '+92',
+    phone: '',
+    password: '',
+    confirmPassword: '',
+    admin_id: '',
+    security_passcode: ''
+  });
+
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const [isCountryOpen, setIsCountryOpen] = useState(false);
+  const [countrySearch, setCountrySearch] = useState('');
+  
+  const dropdownRef = useRef(null);
+  const searchInputRef = useRef(null);
+  const scrollContainerRef = useRef(null);
+
+  const [errorMsg, setErrorMsg] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
+
+  const isLogin = mode === 'login';
+
+  const [adminAuthStep, setAdminAuthStep] = useState('credentials');
+  const [studentOtpStep, setStudentOtpStep] = useState('credentials');
+  const [otpDigits, setOtpDigits] = useState(['', '', '', '', '']);
+  const otpRefs = useRef([]);
+  const inAdminGate = isLogin && role === 'admin' && adminAuthStep === 'otp';
+  const inStudentOtpGate = isLogin && role === 'student' && studentOtpStep === 'otp';
+
+  const [resendCooldown, setResendCooldown] = useState(0);
+  const cooldownIntervalRef = useRef(null);
+
+  const startResendCooldown = (seconds) => {
+    clearInterval(cooldownIntervalRef.current);
+    setResendCooldown(seconds);
+    cooldownIntervalRef.current = setInterval(() => {
+      setResendCooldown((prev) => {
+        if (prev <= 1) {
+          clearInterval(cooldownIntervalRef.current);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  const formatCooldown = (totalSeconds) => {
+    const m = Math.floor(totalSeconds / 60);
+    const s = totalSeconds % 60;
+    return `${m}:${String(s).padStart(2, '0')}`;
+  };
+
+  useEffect(() => {
+    if (adminAuthStep === 'otp' && otpRefs.current[0]) {
+      otpRefs.current[0].focus();
+    }
+  }, [adminAuthStep]);
+
+  useEffect(() => {
+    if (studentOtpStep === 'otp' && otpRefs.current[0]) {
+      otpRefs.current[0].focus();
+    }
+  }, [studentOtpStep]);
+
+  useEffect(() => () => clearInterval(cooldownIntervalRef.current), []);
+
+  useEffect(() => {
+    const fetchCountries = async () => {
+      try {
+        const response = await axios.get('/countries');
+        setCountriesList(response.data);
+        
+        const defaultCountry = response.data.find(c => c.code === '+92') || response.data[0];
+        if (defaultCountry) {
+          setSelectedCountry(defaultCountry);
+          setFormData(prev => ({ ...prev, country_code: defaultCountry.code }));
+        }
+      } catch (error) {
+        console.error("Failed to load countries list", error);
+      }
+    };
+    fetchCountries();
+  }, []);
+
+  const resetAuthFormState = () => {
+    setErrorMsg('');
+    setSuccessMsg('');
+    setFormData(prev => ({
+      name: '',
+      email: '',
+      country_code: prev.country_code,
+      phone: '',
+      password: '',
+      confirmPassword: '',
+      admin_id: '',
+      security_passcode: ''
+    }));
+    setAdminAuthStep('credentials');
+    setStudentOtpStep('credentials');
+    setOtpDigits(['', '', '', '', '']);
+    clearInterval(cooldownIntervalRef.current);
+    setResendCooldown(0);
+  };
+
+  const handleRoleSwitch = (nextRole) => {
+    if (nextRole === role) return;
+    resetAuthFormState();
+    setRole(nextRole);
+  };
+
+  const handleModeToggle = () => {
+    resetAuthFormState();
+    setMode(isLogin ? 'signup' : 'login');
+  };
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0;
+    }
+    clearInterval(cooldownIntervalRef.current);
+  }, [mode, role]);
+
+  useEffect(() => {
+    if (errorMsg) {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      const timer = setTimeout(() => setErrorMsg(''), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [errorMsg]);
+
+  useEffect(() => {
+    if (successMsg) {
+      const timer = setTimeout(() => setSuccessMsg(''), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMsg]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsCountryOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    if (isCountryOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [isCountryOpen]);
+
+  const toTitleCase = (value) =>
+    value.toLowerCase().replace(/(^|[\s'-])(\p{L})/gu, (_, sep, char) => sep + char.toUpperCase());
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+  
+    const field = e.target.dataset.field || e.target.name;
+    setFormData(prev => ({
+      ...prev,
+      [field]: field === 'name' ? toTitleCase(value) : value,
+    }));
+  };
+
+  const handleSelectCountry = (country) => {
+    setSelectedCountry(country);
+    setFormData(prev => ({
+      ...prev,
+      country_code: country.code,
+      phone: '' 
+    }));
+    setIsCountryOpen(false);
+    setCountrySearch('');
+  };
+
+  const handlePhoneChange = (e) => {
+    const rawVal = e.target.value.replace(/\D/g, ''); 
+    const maxLen = selectedCountry ? selectedCountry.maxLen + (rawVal.startsWith('0') ? 1 : 0) : 0;
+    if (selectedCountry && rawVal.length <= maxLen) {
+      setFormData(prev => ({ ...prev, phone: rawVal }));
+    }
+  };
+
+  const filteredCountries = countriesList.filter(c => {
+    const query = countrySearch.toLowerCase().replace('+', '').trim();
+    return c.name.toLowerCase().includes(query) || c.code.replace('+', '').includes(query);
+  });
+
+  const completeAuthSuccess = (response) => {
+    if (response.data?.login_history_id) {
+      sessionStorage.setItem('login_history_id', response.data.login_history_id);
+    }
+    if (response.data?.token) {
+      sessionStorage.setItem('token', response.data.token);
+    }
+    if (response.data?.user) {
+      sessionStorage.setItem('user', JSON.stringify(response.data.user));
+    }
+    if (response.data?.token) {
+      setTimeout(() => {
+        sessionStorage.setItem('skip_next_unload_logout', '1');
+        window.location.reload();
+      }, 1000);
+    }
+  };
+
+  const loadGoogleScript = () => new Promise((resolve, reject) => {
+    if (window.google?.accounts?.oauth2) { resolve(); return; }
+    const existing = document.getElementById('google-identity-script');
+    const script = existing || document.createElement('script');
+    script.addEventListener('load', () => resolve());
+    script.addEventListener('error', () => reject(new Error('Google script failed to load')));
+    if (!existing) {
+      script.id = 'google-identity-script';
+      script.src = 'https://accounts.google.com/gsi/client';
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  });
+
+  const handleGoogleSignIn = async () => {
+    setErrorMsg('');
+    setSuccessMsg('');
+    const clientId = import.meta.env.VITE_GOOGLE_CLIENT_ID || '683136555912-t5mnufrhgcrau0ekv51hbueo78q10fsh.apps.googleusercontent.com';
+    if (!clientId) {
+      setErrorMsg('Google sign-in is not configured yet. Please use your email and password.');
+      return;
+    }
+    setGoogleLoading(true);
+    try {
+      await loadGoogleScript();
+      const tokenClient = window.google.accounts.oauth2.initTokenClient({
+        client_id: clientId,
+        scope: 'openid email profile',
+        prompt: 'select_account',
+        callback: async (tokenResponse) => {
+          if (tokenResponse?.error || !tokenResponse?.access_token) {
+            setGoogleLoading(false);
+            if (tokenResponse?.error !== 'access_denied') setErrorMsg('Google sign-in was not completed. Please try again.');
+            return;
+          }
+          try {
+            const response = await axios.post('/auth/google', { access_token: tokenResponse.access_token });
+            setSuccessMsg('Signed in with Google! Redirecting...');
+            completeAuthSuccess(response);
+          } catch (err) {
+            setErrorMsg(err?.response?.data?.message || 'Google sign-in failed. Please try again.');
+            setGoogleLoading(false);
+          }
+        },
+        error_callback: () => setGoogleLoading(false),
+      });
+      tokenClient.requestAccessToken();
+    } catch {
+      setErrorMsg('Could not open Google sign-in. Check your internet connection and try again.');
+      setGoogleLoading(false);
+    }
+  };
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMsg('');
+    setSuccessMsg('');
+
+    if (!isLogin && formData.password !== formData.confirmPassword) {
+      setErrorMsg('Passwords do not match. Please try again.');
+      setFormData(prev => ({ ...prev, password: '', confirmPassword: '' }));
+      return;
+    }
+
+    if (!isLogin && formData.phone) {
+      const parsed = parsePhoneNumberFromString(formData.phone, { defaultCallingCode: formData.country_code.replace('+', '') });
+      if (!parsed || !parsed.isValid()) {
+        setErrorMsg(`Please enter a valid ${selectedCountry?.name || ''} phone number.`.replace('  ', ' '));
+        return;
+      }
+    }
+
+    if (isLogin && role === 'student') {
+      return handleRequestStudentOtp();
+    }
+
+    if (isLogin && role === 'admin') {
+      return handleRequestAdminOtp();
+    }
+
+    setLoading(true);
+
+    const endpoint = isLogin ? '/login' : '/register';
+    
+    const payload = isLogin
+      ? {
+          email: formData.email,
+          password: formData.password,
+          role,
+          ...(role === 'admin' && { admin_id: formData.admin_id })
+        }
+      : {
+          name: formData.name, 
+          email: formData.email, 
+          country_name: selectedCountry?.name || '',
+          country_code: formData.country_code,
+          phone: formData.phone,
+          password: formData.password, 
+          role,
+          ...(role === 'admin' && { 
+            admin_id: formData.admin_id, 
+            security_passcode: formData.security_passcode 
+          })
+        };
+
+    try {
+      const response = await axios.post(endpoint, payload);
+      setLoading(false);
+      setSuccessMsg(isLogin ? 'Login successful!' : 'Account created successfully!');
+      completeAuthSuccess(response);
+    } catch (err) {
+      setLoading(false);
+
+      setFormData(prev => ({ 
+        ...prev, 
+        password: '', 
+        confirmPassword: '', 
+        security_passcode: '' 
+      }));
+
+      const rawMessage = err.response?.data?.message || err.response?.data?.error || '';
+      const validationErrors = err.response?.data?.errors;
+      const lowerMsg = rawMessage.toLowerCase();
+
+      if (validationErrors) {
+        if (validationErrors.email && validationErrors.phone) {
+          setErrorMsg('This email address or phone number is already registered.');
+        } else if (validationErrors.email) {
+          setErrorMsg('This email address is already registered.');
+        } else if (validationErrors.phone) {
+          const phoneMsg = validationErrors.phone[0] || '';
+          setErrorMsg(/valid/i.test(phoneMsg) ? phoneMsg : 'This phone number is already registered.');
+        } else {
+          setErrorMsg(Object.values(validationErrors)[0][0] || 'Validation error occurred.');
+        }
+      } 
+      else if (!isLogin && lowerMsg.match(/(already|exist|taken|registered|duplicate)/)) {
+        if (lowerMsg.includes('phone') && lowerMsg.includes('email')) {
+          setErrorMsg('This email address or phone number is already registered.');
+        } else if (lowerMsg.includes('phone')) {
+          setErrorMsg('This phone number is already registered.');
+        } else {
+          setErrorMsg('This email address is already registered.');
+        }
+      } else if (!isLogin && role === 'admin' && (lowerMsg.includes('passcode') || lowerMsg.includes('admin') || lowerMsg.includes('unauthorized') || lowerMsg.includes('invalid id'))) {
+        setErrorMsg('Invalid Admin ID or Security Passcode.');
+      } else if (isLogin && role === 'admin' && lowerMsg.includes('admin id')) {
+        setErrorMsg('Invalid Admin ID for this account.');
+      } else if (isLogin || lowerMsg.match(/(email|password|role|unauthorized|credentials)/)) {
+        setErrorMsg('Invalid email or password.');
+      } else {
+        setErrorMsg(rawMessage || 'An unexpected error occurred. Please try again.');
+      }
+    }
+  };
+
+  const handleRequestAdminOtp = async () => {
+    setErrorMsg('');
+    setSuccessMsg('');
+    setLoading(true);
+    try {
+      const res = await axios.post('/admin/otp/request', {
+        email: formData.email,
+        password: formData.password,
+        admin_id: formData.admin_id,
+      });
+      setLoading(false);
+      setSuccessMsg('Verification code sent to your email.');
+      setAdminAuthStep('otp');
+      setOtpDigits(['', '', '', '', '']);
+      startResendCooldown(res.data?.retry_after ?? 120);
+    } catch (err) {
+      setLoading(false);
+      setFormData(prev => ({ ...prev, password: '' }));
+      setErrorMsg(err.response?.data?.message || 'Failed to send verification code. Please try again.');
+    }
+  };
+
+  const handleResendAdminOtp = async () => {
+    if (resendCooldown > 0) return;
+    setErrorMsg('');
+    setSuccessMsg('');
+    setLoading(true);
+    try {
+      const res = await axios.post('/admin/otp/request', {
+        email: formData.email,
+        password: formData.password,
+        admin_id: formData.admin_id,
+      });
+      setLoading(false);
+      setSuccessMsg('A new verification code has been sent.');
+      setOtpDigits(['', '', '', '', '']);
+      if (otpRefs.current[0]) otpRefs.current[0].focus();
+      startResendCooldown(res.data?.retry_after ?? 120);
+    } catch (err) {
+      setLoading(false);
+      if (err.response?.status === 429) {
+        if (err.response.data?.retry_after) startResendCooldown(err.response.data.retry_after);
+        setErrorMsg(err.response.data?.message || 'Please wait before requesting another code.');
+      } else {
+        setErrorMsg(err.response?.data?.message || 'Failed to resend verification code.');
+      }
+    }
+  };
+
+  const handleVerifyAdminOtp = async (e) => {
+    e.preventDefault();
+    setErrorMsg('');
+    setSuccessMsg('');
+    const code = otpDigits.join('');
+    if (code.length !== 5) {
+      setErrorMsg('Please enter the 5-digit verification code.');
+      return;
+    }
+    setLoading(true);
+    try {
+      const response = await axios.post('/admin/otp/verify', { email: formData.email, code });
+      setLoading(false);
+      setSuccessMsg('Login successful!');
+      completeAuthSuccess(response);
+    } catch (err) {
+      setLoading(false);
+      setErrorMsg(err.response?.data?.message || 'Invalid or expired verification code.');
+    }
+  };
+
+  const handleRequestStudentOtp = async () => {
+    if (resendCooldown > 0) return;
+    setErrorMsg('');
+    setSuccessMsg('');
+    setLoading(true);
+    try {
+      const res = await axios.post('/student/otp/request', {
+        email: formData.email,
+        password: formData.password,
+      });
+      setLoading(false);
+      setSuccessMsg('Verification code sent to your email.');
+      setStudentOtpStep('otp');
+      setOtpDigits(['', '', '', '', '']);
+      startResendCooldown(res.data?.retry_after ?? 120);
+    } catch (err) {
+      setLoading(false);
+      setFormData(prev => ({ ...prev, password: '' }));
+      if (err.response?.status === 429) {
+        if (err.response.data?.retry_after) startResendCooldown(err.response.data.retry_after);
+        setErrorMsg(err.response.data?.message || 'Please wait before requesting another code.');
+      } else {
+        setErrorMsg('Invalid email or password.');
+      }
+    }
+  };
+
+  const handleResendStudentOtp = async () => {
+    if (resendCooldown > 0) return;
+    setErrorMsg('');
+    setSuccessMsg('');
+    setLoading(true);
+    try {
+      const res = await axios.post('/student/otp/request', {
+        email: formData.email,
+        password: formData.password,
+      });
+      setLoading(false);
+      setSuccessMsg('A new verification code has been sent.');
+      setOtpDigits(['', '', '', '', '']);
+      if (otpRefs.current[0]) otpRefs.current[0].focus();
+      startResendCooldown(res.data?.retry_after ?? 120);
+    } catch (err) {
+      setLoading(false);
+      if (err.response?.status === 429) {
+        if (err.response.data?.retry_after) startResendCooldown(err.response.data.retry_after);
+        setErrorMsg(err.response.data?.message || 'Please wait before requesting another code.');
+      } else {
+        setErrorMsg(err.response?.data?.message || 'Failed to resend verification code.');
+      }
+    }
+  };
+
+  const handleVerifyStudentOtp = async (e) => {
+    e.preventDefault();
+    setErrorMsg('');
+    setSuccessMsg('');
+    const code = otpDigits.join('');
+    if (code.length !== 5) {
+      setErrorMsg('Please enter the 5-digit verification code.');
+      return;
+    }
+    setLoading(true);
+    try {
+      const response = await axios.post('/student/otp/verify', { email: formData.email, code });
+      setLoading(false);
+      setSuccessMsg('Login successful!');
+      completeAuthSuccess(response);
+    } catch (err) {
+      setLoading(false);
+      setErrorMsg(err.response?.data?.message || 'Invalid or expired verification code.');
+    }
+  };
+
+  const handleOtpDigitChange = (index, rawValue) => {
+    const value = rawValue.replace(/\D/g, '').slice(-1);
+    setOtpDigits((prev) => {
+      const next = [...prev];
+      next[index] = value;
+      return next;
+    });
+    if (value && index < otpDigits.length - 1 && otpRefs.current[index + 1]) {
+      otpRefs.current[index + 1].focus();
+    }
+  };
+
+  const handleOtpKeyDown = (index, e) => {
+    if (e.key === 'Backspace' && !otpDigits[index] && index > 0 && otpRefs.current[index - 1]) {
+      otpRefs.current[index - 1].focus();
+    }
+  };
+
+  const handleBackAction = () => {
+    if (isLogin) {
+      if (onBackHome) onBackHome();
+    } else {
+      setMode('login');
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-white flex flex-col lg:flex-row relative font-poppins overflow-hidden">
+      
+      <div className="absolute hidden lg:block top-6 left-6 z-50">
+        <button onClick={handleBackAction} className="flex items-center gap-2 px-4 py-2 border border-gray-200 bg-white hover:bg-gray-50 rounded-xl text-[14px] font-semibold text-gray-700 shadow-sm cursor-pointer">
+          {isLogin ? '← Back To Home' : '← Back To Login'}
+        </button>
+      </div>
+
+      <div ref={scrollContainerRef} className={`w-full lg:w-[55%] flex flex-col justify-start items-center px-8 sm:px-16 lg:px-24 py-8 lg:py-6 h-screen overflow-y-auto ${isLogin ? 'order-1' : 'order-2'}`}>
+        <div className="w-full max-w-[420px] space-y-4 pt-0 my-auto">
+          
+          <div className={`text-center space-y-2 mt-8 lg:mt-4 ${!isLogin ? 'lg:w-[560px] lg:-mx-[70px]' : ''}`}>
+            <h1 className={`font-bold text-black tracking-tight ${isLogin ? 'text-[28px] lg:text-[32px]' : 'text-[22px] sm:text-[26px] lg:text-[35px] lg:whitespace-nowrap'}`}>
+              {isLogin ? 'Welcome Back' : (role === 'admin' ? 'Create Your Admin Account' : 'Create Your Student Account')}
+            </h1>
+            <p className="text-[20px] font-light text-[#000000]">
+              {isLogin
+                ? (role === 'admin' ? 'Sign in to access the admin dashboard' : 'Sign in to continue your career journey')
+                : (role === 'admin' ? 'Get started managing your platform' : 'Start your journey to your dream career')}
+            </p>
+          </div>
+
+          {isLogin && (
+            <div className="flex bg-gray-100/80 p-1.5 rounded-full items-center w-[300px] mx-auto border border-gray-200 mt-5">
+              <button type="button" onClick={() => handleRoleSwitch('student')} className={`flex-1 py-1.5 text-[17px] font-semibold rounded-full cursor-pointer ${role === 'student' ? 'bg-white text-[#83047A] shadow-sm' : 'text-black'}`}>Student</button>
+              <button type="button" onClick={() => handleRoleSwitch('admin')} className={`flex-1 py-1.5 text-[17px] font-semibold rounded-full cursor-pointer ${role === 'admin' ? 'bg-white text-[#83047A] shadow-sm' : 'text-black'}`}>Admin</button>
+            </div>
+          )}
+
+          {errorMsg && (
+            <div className="bg-red-50 border border-red-200 text-red-600 text-[12px] sm:text-[13px] font-medium py-2.5 px-3.5 rounded-xl flex items-center justify-center gap-2 shadow-sm animate-fade-in">
+              <XCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-600 shrink-0" />
+              <span className="text-center leading-snug">{errorMsg}</span>
+            </div>
+          )}
+
+          {successMsg && (
+            <div className="bg-green-50 border border-green-200 text-green-700 text-[12px] sm:text-[13px] font-medium py-2.5 px-3.5 rounded-xl flex items-center justify-center gap-2 shadow-sm animate-fade-in">
+              <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 shrink-0" />
+              <span className="text-center leading-snug">{successMsg}</span>
+            </div>
+          )}
+
+          {inAdminGate && (
+            <form onSubmit={handleVerifyAdminOtp} autoComplete="off" className="space-y-5 mt-[30px] animate-step-in">
+              <div className="space-y-2">
+                <label className="text-[16px] font-semibold text-black block">Verification Code</label>
+                <p className="text-[13px] text-gray-500">Enter the 5-digit code sent to <span className="font-semibold text-black">{formData.email}</span></p>
+                <div className="flex items-center justify-center gap-3 pt-2">
+                  {otpDigits.map((digit, idx) => (
+                    <input
+                      key={idx}
+                      ref={(el) => (otpRefs.current[idx] = el)}
+                      type="text"
+                      inputMode="numeric"
+                      maxLength={1}
+                      value={digit}
+                      onChange={(e) => handleOtpDigitChange(idx, e.target.value)}
+                      onKeyDown={(e) => handleOtpKeyDown(idx, e)}
+                      className="w-12 h-14 text-center text-[22px] font-bold bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300"
+                    />
+                  ))}
+                </div>
+              </div>
+              <button type="submit" disabled={loading} className="w-full bg-[#ffa3f5] hover:bg-[#f88def] text-[#890080] font-medium py-3.5 rounded-full text-[18px] tracking-wider cursor-pointer disabled:opacity-50">
+                {loading ? 'Verifying...' : 'Verify Code'}
+              </button>
+              <div className="flex items-center justify-between text-[14px] pt-1">
+                <button type="button" onClick={() => { setAdminAuthStep('credentials'); setOtpDigits(['', '', '', '', '']); clearInterval(cooldownIntervalRef.current); setResendCooldown(0); }} className="text-gray-500 font-medium hover:underline cursor-pointer">Change details</button>
+                <div className="flex items-center gap-2">
+                  {resendCooldown > 0 && (
+                    <span className="text-gray-400 font-medium text-[13px] tabular-nums">{formatCooldown(resendCooldown)}</span>
+                  )}
+                  <button type="button" onClick={handleResendAdminOtp} disabled={loading || resendCooldown > 0} className="text-[#0063CC] font-medium hover:underline cursor-pointer disabled:opacity-50 disabled:text-gray-400 disabled:no-underline disabled:cursor-not-allowed">Resend Code</button>
+                </div>
+              </div>
+            </form>
+          )}
+
+          {inStudentOtpGate && (
+            <form onSubmit={handleVerifyStudentOtp} autoComplete="off" className="space-y-5 mt-[30px] animate-step-in">
+              <div className="space-y-2">
+                <label className="text-[16px] font-semibold text-black block">Verification Code</label>
+                <p className="text-[13px] text-gray-500">Enter the 5-digit code sent to <span className="font-semibold text-black">{formData.email}</span></p>
+                <div className="flex items-center justify-center gap-3 pt-2">
+                  {otpDigits.map((digit, idx) => (
+                    <input
+                      key={idx}
+                      ref={(el) => (otpRefs.current[idx] = el)}
+                      type="text"
+                      inputMode="numeric"
+                      maxLength={1}
+                      value={digit}
+                      onChange={(e) => handleOtpDigitChange(idx, e.target.value)}
+                      onKeyDown={(e) => handleOtpKeyDown(idx, e)}
+                      className="w-12 h-14 text-center text-[22px] font-bold bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300"
+                    />
+                  ))}
+                </div>
+              </div>
+              <button type="submit" disabled={loading} className="w-full bg-[#ffa3f5] hover:bg-[#f88def] text-[#890080] font-medium py-3.5 rounded-full text-[18px] tracking-wider cursor-pointer disabled:opacity-50">
+                {loading ? 'Verifying...' : 'Verify Code'}
+              </button>
+              <div className="flex items-center justify-between text-[14px] pt-1">
+                <button type="button" onClick={() => { setStudentOtpStep('credentials'); setOtpDigits(['', '', '', '', '']); clearInterval(cooldownIntervalRef.current); setResendCooldown(0); }} className="text-gray-500 font-medium hover:underline cursor-pointer">Change email</button>
+                <div className="flex items-center gap-2">
+                  {resendCooldown > 0 && (
+                    <span className="text-gray-400 font-medium text-[13px] tabular-nums">{formatCooldown(resendCooldown)}</span>
+                  )}
+                  <button type="button" onClick={handleResendStudentOtp} disabled={loading || resendCooldown > 0} className="text-[#0063CC] font-medium hover:underline cursor-pointer disabled:opacity-50 disabled:text-gray-400 disabled:no-underline disabled:cursor-not-allowed">Resend Code</button>
+                </div>
+              </div>
+            </form>
+          )}
+
+          {!inAdminGate && !inStudentOtpGate && (
+          <>
+          <form key={`${role}-${mode}`} onSubmit={handleFormSubmit} autoComplete="off" className={`space-y-5 ${isLogin ? 'mt-5' : 'mt-[52px]'}`}>
+
+            {role === 'admin' && (
+              <>
+                <div className="space-y-1">
+                  <label htmlFor={`${role}-${mode}-admin_id`} className="text-[16px] font-semibold text-black block">Admin ID</label>
+                  <input id={`${role}-${mode}-admin_id`} type="text" name={`admin_id_${mode}`} data-field="admin_id" value={formData.admin_id} onChange={handleChange} required autoComplete="off" placeholder="Enter Admin ID" className="w-full bg-gray-50/50 border border-gray-200 rounded-xl px-4 py-2.5 text-[14px] font-medium focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300 placeholder-gray-400" />
+                </div>
+                {!isLogin && (
+                  <div className="space-y-1">
+                    <label htmlFor={`${role}-${mode}-security_passcode`} className="text-[16px] font-semibold text-black block">Security Passcode</label>
+                    <div className="relative">
+                      <input id={`${role}-${mode}-security_passcode`} type={showAdminPass ? "text" : "password"} name="admin_security_passcode" data-field="security_passcode" value={formData.security_passcode} onChange={handleChange} required autoComplete="new-password" placeholder="Enter Security Passcode" className="w-full bg-gray-50/50 border border-gray-200 rounded-xl pl-4 pr-12 py-2.5 text-[14px] font-medium focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300 placeholder-gray-400" />
+                      <button type="button" onClick={() => setShowAdminPass(!showAdminPass)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer">{showAdminPass ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}</button>
+                    </div>
+                  </div>
+                )}
+              </>
+            )}
+
+            {!isLogin && (
+              <div className="space-y-1">
+                <label htmlFor={`${role}-${mode}-name`} className="text-[16px] font-semibold text-black block">Full Name</label>
+                <input id={`${role}-${mode}-name`} type="text" name={`${role}_name`} data-field="name" value={formData.name} onChange={handleChange} required autoCapitalize="words" autoComplete="name" placeholder="Enter Full Name" className="w-full bg-gray-50/50 border border-gray-200 rounded-xl px-4 py-2.5 text-[14px] font-medium focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300 placeholder-gray-400" />
+              </div>
+            )}
+
+            <div className="space-y-1">
+              <label htmlFor={`${role}-${mode}-email`} className="text-[16px] font-semibold text-black block">Email</label>
+              <input id={`${role}-${mode}-email`} type="email" name={`${role}_email`} data-field="email" value={formData.email} onChange={handleChange} required autoComplete={isLogin ? 'username' : 'email'} placeholder="Enter email address" className="w-full bg-gray-50/50 border border-gray-200 rounded-xl px-4 py-2.5 text-[14px] font-medium focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300 placeholder-gray-400" />
+              <EmailSuggestion email={formData.email} onAccept={(value) => setFormData((prev) => ({ ...prev, email: value }))} />
+            </div>
+
+            {!isLogin && selectedCountry && (
+              <div className="space-y-1">
+                <label className="text-[16px] font-semibold text-black block">Phone Number</label>
+                <div className="flex gap-2">
+                  <div className="relative w-[130px] shrink-0" ref={dropdownRef}>
+                    <button type="button" onClick={() => setIsCountryOpen(!isCountryOpen)} className="w-full bg-gray-50/50 border border-gray-200 rounded-xl px-3 py-2.5 text-[14px] font-medium text-gray-700 flex items-center justify-between cursor-pointer">
+                      <span className="truncate">{selectedCountry.flag} {selectedCountry.code}</span>
+                      <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform ${isCountryOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {isCountryOpen && (
+                      <div className="absolute top-full left-0 mt-1 w-[260px] bg-white border border-gray-200 rounded-xl shadow-xl z-50 overflow-hidden">
+                        <div className="p-2 border-b border-gray-100 flex items-center gap-2 bg-gray-50/80">
+                          <Search className="w-4 h-4 text-gray-400 shrink-0 ml-1" />
+                          <input ref={searchInputRef} type="text" value={countrySearch} onChange={(e) => setCountrySearch(e.target.value)} placeholder="Search country or code..." className="w-full bg-transparent text-[13px] font-medium focus:outline-none" />
+                        </div>
+                        <div className="max-h-56 overflow-y-auto divide-y divide-gray-50">
+                          {filteredCountries.length > 0 ? filteredCountries.map((c, idx) => (
+                            <button key={idx} type="button" onClick={() => handleSelectCountry(c)} className={`w-full px-3 py-2.5 text-left text-[13px] font-medium flex items-center justify-between hover:bg-pink-50 cursor-pointer ${selectedCountry.code === c.code ? 'bg-pink-50/60 text-[#83047A] font-semibold' : 'text-gray-700'}`}>
+                              <span>{c.flag} {c.name}</span>
+                              <span className="text-gray-400 text-[12px] font-mono">{c.code}</span>
+                            </button>
+                          )) : <div className="p-3 text-center text-[12px] text-gray-400">No country found</div>}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <input type="tel" name="phone" value={formData.phone} onChange={handlePhoneChange} required autoComplete="tel-national" placeholder={selectedCountry.placeholder} className="w-full bg-gray-50/50 border border-gray-200 rounded-xl px-4 py-2.5 text-[14px] font-medium focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300 placeholder-gray-400" />
+                </div>
+              </div>
+            )}
+
+            <div className="space-y-1">
+              <label htmlFor={`${role}-${mode}-password`} className="text-[16px] font-semibold text-black block">Password</label>
+              <div className="relative">
+                <input id={`${role}-${mode}-password`} type={showPass ? "text" : "password"} name={`${role}_password`} data-field="password" value={formData.password} onChange={handleChange} required autoComplete={isLogin ? 'current-password' : 'new-password'} placeholder="Enter Password" className="w-full bg-gray-50/50 border border-gray-200 rounded-xl pl-4 pr-12 py-2.5 text-[14px] font-medium focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300 placeholder-gray-400" />
+                <button type="button" onClick={() => setShowPass(!showPass)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer">{showPass ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}</button>
+              </div>
+            </div>
+
+            {!isLogin && (
+              <div className="space-y-1">
+                <label htmlFor={`${role}-${mode}-confirmPassword`} className="text-[16px] font-semibold text-black block">Confirm Password</label>
+                <div className="relative">
+                  <input id={`${role}-${mode}-confirmPassword`} type={showConfirmPass ? "text" : "password"} name={`${role}_confirm_password`} data-field="confirmPassword" value={formData.confirmPassword} onChange={handleChange} required autoComplete="new-password" placeholder="Enter Confirm Password" className="w-full bg-gray-50/50 border border-gray-200 rounded-xl pl-4 pr-12 py-2.5 text-[14px] font-medium focus:outline-none focus:border-pink-300 focus:ring-1 focus:ring-pink-300 placeholder-gray-400" />
+                  <button type="button" onClick={() => setShowConfirmPass(!showConfirmPass)} className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 cursor-pointer">{showConfirmPass ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}</button>
+                </div>
+              </div>
+            )}
+
+            {isLogin ? (
+              <div className="flex items-center justify-between text-[15px] pt-1">
+                <label className="flex items-center gap-2 cursor-pointer font-medium text-black text-[14px]"><input type="checkbox" className="rounded border-gray-300 w-4 h-4" /> Remember Me</label>
+                <button type="button" onClick={() => onForgotPassword && onForgotPassword(role)} className="text-[#890080] font-medium text-[14px] hover:underline cursor-pointer">Forgot Password?</button>
+              </div>
+            ) : (
+              <div className="flex items-start gap-2 text-[12px] pt-1 leading-normal text-gray-600 font-medium text-[14px]">
+                <input type="checkbox" required className="rounded border-gray-300 w-4 h-4 mt-0.5 shrink-0" />
+                <span>I agree to the <span className="text-blue-600 hover:underline cursor-pointer">Terms of Service</span> and <span className="text-blue-600 hover:underline cursor-pointer">Privacy Policy</span>.</span>
+              </div>
+            )}
+
+            <button type="submit" disabled={loading} className="w-full bg-[#ffa3f5] hover:bg-[#f88def] text-[#890080] font-medium py-3 rounded-full text-[17px] tracking-wider cursor-pointer disabled:opacity-50">
+              {loading ? 'Processing...' : (isLogin ? 'Sign In' : 'Create Account')}
+            </button>
+          </form>
+          
+          {role === 'student' && (
+            <>
+              <div className="relative flex items-center justify-center py-0">
+                <div className="absolute inset-0 flex items-center"><div className="w-full border-t border-gray-200"></div></div>
+                <span className="relative bg-[#ffffff] px-4 text-[16px] font-normal text-gray-500 lowercase">or continue with</span>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                disabled={googleLoading || loading}
+                className="w-full border border-gray-200 bg-white hover:bg-gray-50 text-black py-2.5 rounded-[20px] font-medium flex items-center justify-center gap-3 cursor-pointer shadow-sm disabled:opacity-60 disabled:cursor-wait"
+              >
+                <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                  <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                  <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                  <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                </svg>
+                <span className="font-medium text-[17px]">{googleLoading ? 'Connecting to Google...' : (isLogin ? 'Sign in with Google' : 'Sign up with Google')}</span>
+              </button>
+            </>
+          )}
+
+          <p className="text-center text-[15px] font-normal text-black mt-3">
+            {isLogin
+              ? (role === 'admin' ? 'New administrator?' : "Don't have an account?")
+              : "Already have an account?"}{' '}
+            <button type="button" onClick={handleModeToggle} className="text-[#0063CC] font-normal hover:underline ml-1 cursor-pointer">
+              {isLogin ? (role === 'admin' ? 'Create Admin Account' : 'Sign Up') : 'Login'}
+            </button>
+          </p>
+          </>
+          )}
+        </div>
+      </div>
+
+      <div className={`hidden lg:flex w-[45%] bg-[#FCEDF7] h-screen items-center justify-center relative select-none ${isLogin ? 'order-2' : 'order-1'}`}>
+        <img src={AuthImage} alt="Robotic Hand Touch" className="w-full h-full object-cover mix-blend-multiply" />
+      </div>
+
+    </div>
+  );
+}

@@ -1,0 +1,4774 @@
+[
+    {
+        "id": 1,
+        "title": "Software Developer",
+        "description": "Design, build, and deploy production-grade applications. Break down complex business logic into scalable code, handle databases, and optimize software systems.",
+        "skills": [
+            {
+                "name": "JavaScript\/Python",
+                "value": 90
+            },
+            {
+                "name": "HTML\/CSS",
+                "value": 85
+            },
+            {
+                "name": "Git & GitHub",
+                "value": 75
+            },
+            {
+                "name": "React\/Vue",
+                "value": 70
+            },
+            {
+                "name": "Problem Solving",
+                "value": 95
+            },
+            {
+                "name": "Databases",
+                "value": 65
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "domains": [
+                "tech"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 2,
+        "title": "Data Analyst",
+        "description": "Transform raw organizational database payloads into actionable corporate intelligence. Audit pipelines and engineer premium executive dashboards.",
+        "skills": [
+            {
+                "name": "SQL Data Queries",
+                "value": 88
+            },
+            {
+                "name": "Python\/R",
+                "value": 75
+            },
+            {
+                "name": "Excel Advanced",
+                "value": 90
+            },
+            {
+                "name": "Tableau\/PowerBI",
+                "value": 85
+            },
+            {
+                "name": "Statistics",
+                "value": 80
+            },
+            {
+                "name": "Data Warehousing",
+                "value": 60
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "I",
+                "C",
+                "E"
+            ],
+            "domains": [
+                "data",
+                "business"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 3,
+        "title": "UX Designer",
+        "description": "Architect flawless user interactions and interface behaviors for cross-platform products using cognitive psychology maps and prototype flows.",
+        "skills": [
+            {
+                "name": "Figma\/Adobe XD",
+                "value": 95
+            },
+            {
+                "name": "User Research",
+                "value": 80
+            },
+            {
+                "name": "Wireframing",
+                "value": 90
+            },
+            {
+                "name": "Prototyping",
+                "value": 85
+            },
+            {
+                "name": "UI Design",
+                "value": 88
+            },
+            {
+                "name": "Interaction Design",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "A",
+                "I",
+                "S"
+            ],
+            "domains": [
+                "design",
+                "tech"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 4,
+        "title": "Business Analyst",
+        "description": "Translate company needs into explicit engineering user stories, business charts, systemic flowcharts, and functional specifications.",
+        "skills": [
+            {
+                "name": "Requirements Gathering",
+                "value": 92
+            },
+            {
+                "name": "Process Modeling",
+                "value": 85
+            },
+            {
+                "name": "Agile\/Scrum",
+                "value": 80
+            },
+            {
+                "name": "Communication",
+                "value": 95
+            },
+            {
+                "name": "Jira\/Confluence",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "I",
+                "C",
+                "E"
+            ],
+            "domains": [
+                "business",
+                "data"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 5,
+        "title": "Digital Marketing Specialist",
+        "description": "Configure programmatic tracking networks, search engine index parameters, digital ads funnels, and performance conversion pixels.",
+        "skills": [
+            {
+                "name": "SEO Optimization",
+                "value": 88
+            },
+            {
+                "name": "Google Analytics",
+                "value": 85
+            },
+            {
+                "name": "Paid Ads Management",
+                "value": 90
+            },
+            {
+                "name": "Content Creation",
+                "value": 80
+            },
+            {
+                "name": "Email Marketing",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "E",
+                "A",
+                "C"
+            ],
+            "domains": [
+                "media",
+                "business"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 6,
+        "title": "Product Manager",
+        "description": "Own product lifecycle frameworks. Govern development constraints across design, engineering, and sales squads to launch viable software models.",
+        "skills": [
+            {
+                "name": "Product Strategy",
+                "value": 92
+            },
+            {
+                "name": "Roadmapping",
+                "value": 90
+            },
+            {
+                "name": "Market Research",
+                "value": 85
+            },
+            {
+                "name": "A\/B Metrics Testing",
+                "value": 78
+            },
+            {
+                "name": "Leadership",
+                "value": 95
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "E",
+                "I",
+                "A"
+            ],
+            "domains": [
+                "tech",
+                "business"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 7,
+        "title": "Human Resources Specialist",
+        "description": "Govern company employment loops, structural candidate screening protocols, workforce metrics, and labor legal compliance catalogs.",
+        "skills": [
+            {
+                "name": "Talent Acquisition",
+                "value": 90
+            },
+            {
+                "name": "Employee Relations",
+                "value": 88
+            },
+            {
+                "name": "Conflict Resolution",
+                "value": 85
+            },
+            {
+                "name": "HRIS Tool Management",
+                "value": 70
+            },
+            {
+                "name": "Labor Compliance",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "S",
+                "E",
+                "C"
+            ],
+            "domains": [
+                "business",
+                "social"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 8,
+        "title": "Financial Analyst",
+        "description": "Build systematic financial ledger equations and multi-statement cash projections to audit capital parameters and forecast investment returns.",
+        "skills": [
+            {
+                "name": "Financial Modeling",
+                "value": 92
+            },
+            {
+                "name": "Corporate Valuation",
+                "value": 85
+            },
+            {
+                "name": "Excel Macro Engines",
+                "value": 90
+            },
+            {
+                "name": "Data Forecasting",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "C",
+                "I",
+                "E"
+            ],
+            "domains": [
+                "finance",
+                "data"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 9,
+        "title": "Research Scientist",
+        "description": "Design rigorous experimental loops and mathematical hypothesis arrays to isolate structural variances and publish industrial innovations.",
+        "skills": [
+            {
+                "name": "Data Analytics",
+                "value": 85
+            },
+            {
+                "name": "Statistical Modeling",
+                "value": 90
+            },
+            {
+                "name": "Technical Writing",
+                "value": 95
+            },
+            {
+                "name": "Hypothesis Design",
+                "value": 88
+            }
+        ],
+        "traits": {
+            "riasec": [
+                "I",
+                "R",
+                "A"
+            ],
+            "domains": [
+                "science"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 10,
+        "title": "Data Scientist",
+        "description": "Extract insights from massive datasets using statistics, machine learning, and programming to help organizations make data-driven decisions.",
+        "skills": [
+            {
+                "name": "Python\/R",
+                "value": 90
+            },
+            {
+                "name": "SQL",
+                "value": 85
+            },
+            {
+                "name": "Statistics",
+                "value": 88
+            },
+            {
+                "name": "Machine Learning",
+                "value": 80
+            },
+            {
+                "name": "Data Visualization",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "data",
+                "tech"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "R"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 11,
+        "title": "Machine Learning Engineer",
+        "description": "Design and deploy production machine learning systems, turning research models into scalable, reliable software used by millions.",
+        "skills": [
+            {
+                "name": "Python",
+                "value": 92
+            },
+            {
+                "name": "Deep Learning",
+                "value": 85
+            },
+            {
+                "name": "MLOps & Deployment",
+                "value": 78
+            },
+            {
+                "name": "Cloud (AWS\/GCP)",
+                "value": 75
+            },
+            {
+                "name": "Software Engineering",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "data"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 12,
+        "title": "Cybersecurity Analyst",
+        "description": "Protect organizations from cyber threats by monitoring networks, investigating incidents, and hardening systems against attacks.",
+        "skills": [
+            {
+                "name": "Network Security",
+                "value": 88
+            },
+            {
+                "name": "Threat Detection",
+                "value": 85
+            },
+            {
+                "name": "Linux\/Windows Admin",
+                "value": 78
+            },
+            {
+                "name": "Security Tools (SIEM)",
+                "value": 75
+            },
+            {
+                "name": "Incident Response",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "domains": [
+                "cyber",
+                "tech"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 13,
+        "title": "Cloud Solutions Architect",
+        "description": "Design scalable, secure, and cost-efficient cloud infrastructure for organizations migrating to AWS, Azure, or Google Cloud.",
+        "skills": [
+            {
+                "name": "AWS\/Azure\/GCP",
+                "value": 90
+            },
+            {
+                "name": "Networking",
+                "value": 80
+            },
+            {
+                "name": "Infrastructure as Code",
+                "value": 78
+            },
+            {
+                "name": "Security & Compliance",
+                "value": 75
+            },
+            {
+                "name": "System Design",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "cyber",
+                "tech"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 14,
+        "title": "DevOps Engineer",
+        "description": "Bridge development and operations by automating deployment pipelines, managing infrastructure, and ensuring systems run reliably at scale.",
+        "skills": [
+            {
+                "name": "CI\/CD Pipelines",
+                "value": 88
+            },
+            {
+                "name": "Docker & Kubernetes",
+                "value": 85
+            },
+            {
+                "name": "Linux Administration",
+                "value": 80
+            },
+            {
+                "name": "Scripting (Bash\/Python)",
+                "value": 78
+            },
+            {
+                "name": "Cloud Infrastructure",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "cyber"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 15,
+        "title": "Mobile App Developer",
+        "description": "Build native and cross-platform mobile applications for iOS and Android used by millions of everyday users.",
+        "skills": [
+            {
+                "name": "Swift\/Kotlin",
+                "value": 82
+            },
+            {
+                "name": "Flutter\/React Native",
+                "value": 78
+            },
+            {
+                "name": "UI\/UX Principles",
+                "value": 75
+            },
+            {
+                "name": "REST APIs",
+                "value": 80
+            },
+            {
+                "name": "App Store Deployment",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "design"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "A"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 16,
+        "title": "Game Developer",
+        "description": "Create video games for PC, console, and mobile platforms, combining programming, art, and storytelling into interactive experiences.",
+        "skills": [
+            {
+                "name": "C#\/C++",
+                "value": 85
+            },
+            {
+                "name": "Unity\/Unreal Engine",
+                "value": 82
+            },
+            {
+                "name": "Game Physics",
+                "value": 70
+            },
+            {
+                "name": "3D Math",
+                "value": 72
+            },
+            {
+                "name": "Version Control (Git)",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "design"
+            ],
+            "riasec": [
+                "A",
+                "I",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 17,
+        "title": "IT Project Manager",
+        "description": "Plan, coordinate, and deliver technology projects on time and on budget by managing teams, timelines, and stakeholder expectations.",
+        "skills": [
+            {
+                "name": "Agile\/Scrum",
+                "value": 85
+            },
+            {
+                "name": "Stakeholder Management",
+                "value": 82
+            },
+            {
+                "name": "Risk Management",
+                "value": 75
+            },
+            {
+                "name": "Budgeting",
+                "value": 70
+            },
+            {
+                "name": "Technical Fluency",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "business"
+            ],
+            "riasec": [
+                "E",
+                "C",
+                "I"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 18,
+        "title": "Management Consultant",
+        "description": "Advise organizations on strategy, operations, and performance improvement, solving high-stakes business problems for clients across industries.",
+        "skills": [
+            {
+                "name": "Analytical Problem-Solving",
+                "value": 90
+            },
+            {
+                "name": "Excel & Financial Modeling",
+                "value": 82
+            },
+            {
+                "name": "Presentation & Communication",
+                "value": 88
+            },
+            {
+                "name": "Market Research",
+                "value": 78
+            },
+            {
+                "name": "Project Management",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business",
+                "finance"
+            ],
+            "riasec": [
+                "E",
+                "I",
+                "S"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 19,
+        "title": "Investment Banker",
+        "description": "Advise corporations and governments on raising capital, mergers, and acquisitions in one of finance's most competitive and lucrative fields.",
+        "skills": [
+            {
+                "name": "Financial Modeling",
+                "value": 92
+            },
+            {
+                "name": "Valuation (DCF\/Comps)",
+                "value": 88
+            },
+            {
+                "name": "Excel & PowerPoint",
+                "value": 85
+            },
+            {
+                "name": "Accounting",
+                "value": 80
+            },
+            {
+                "name": "Client Communication",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "finance",
+                "business"
+            ],
+            "riasec": [
+                "E",
+                "C",
+                "I"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 20,
+        "title": "Certified Public Accountant",
+        "description": "Prepare and audit financial records, ensure tax compliance, and advise businesses and individuals on financial strategy.",
+        "skills": [
+            {
+                "name": "Financial Accounting",
+                "value": 90
+            },
+            {
+                "name": "Tax Law",
+                "value": 80
+            },
+            {
+                "name": "Auditing",
+                "value": 75
+            },
+            {
+                "name": "Excel",
+                "value": 82
+            },
+            {
+                "name": "Attention to Detail",
+                "value": 88
+            }
+        ],
+        "traits": {
+            "domains": [
+                "finance"
+            ],
+            "riasec": [
+                "C",
+                "I",
+                "E"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 21,
+        "title": "Marketing Manager",
+        "description": "Plan and execute marketing campaigns across digital and traditional channels to build brand awareness and drive business growth.",
+        "skills": [
+            {
+                "name": "Digital Marketing",
+                "value": 85
+            },
+            {
+                "name": "SEO\/SEM",
+                "value": 78
+            },
+            {
+                "name": "Content Strategy",
+                "value": 80
+            },
+            {
+                "name": "Analytics (GA4)",
+                "value": 75
+            },
+            {
+                "name": "Team Leadership",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business",
+                "media"
+            ],
+            "riasec": [
+                "E",
+                "A",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 22,
+        "title": "Supply Chain Manager",
+        "description": "Oversee the flow of goods from raw materials to finished products, optimizing logistics, inventory, and supplier relationships.",
+        "skills": [
+            {
+                "name": "Logistics & Operations",
+                "value": 85
+            },
+            {
+                "name": "Demand Forecasting",
+                "value": 75
+            },
+            {
+                "name": "ERP Systems (SAP)",
+                "value": 72
+            },
+            {
+                "name": "Negotiation",
+                "value": 78
+            },
+            {
+                "name": "Data Analysis",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business",
+                "transport"
+            ],
+            "riasec": [
+                "C",
+                "E",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 23,
+        "title": "Physician (General Practitioner)",
+        "description": "Diagnose and treat a broad range of illnesses, provide preventive care, and coordinate patient treatment as a first point of contact.",
+        "skills": [
+            {
+                "name": "Clinical Diagnosis",
+                "value": 92
+            },
+            {
+                "name": "Patient Communication",
+                "value": 88
+            },
+            {
+                "name": "Pharmacology",
+                "value": 82
+            },
+            {
+                "name": "Medical Ethics",
+                "value": 80
+            },
+            {
+                "name": "Emergency Response",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "S",
+                "R"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 24,
+        "title": "Registered Nurse",
+        "description": "Provide direct patient care, administer treatments, and support patients and families through every stage of illness and recovery.",
+        "skills": [
+            {
+                "name": "Patient Care",
+                "value": 92
+            },
+            {
+                "name": "Clinical Assessment",
+                "value": 85
+            },
+            {
+                "name": "Medication Administration",
+                "value": 82
+            },
+            {
+                "name": "Communication & Empathy",
+                "value": 90
+            },
+            {
+                "name": "Critical Thinking",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "social"
+            ],
+            "riasec": [
+                "S",
+                "I",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 25,
+        "title": "Pharmacist",
+        "description": "Dispense medications, counsel patients on proper drug use, and collaborate with healthcare providers to optimize treatment outcomes.",
+        "skills": [
+            {
+                "name": "Pharmacology",
+                "value": 92
+            },
+            {
+                "name": "Patient Counseling",
+                "value": 82
+            },
+            {
+                "name": "Drug Interaction Review",
+                "value": 85
+            },
+            {
+                "name": "Attention to Detail",
+                "value": 88
+            },
+            {
+                "name": "Regulatory Compliance",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "S"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 26,
+        "title": "Physical Therapist",
+        "description": "Help patients recover mobility and manage pain after injury or surgery through personalized rehabilitation and exercise programs.",
+        "skills": [
+            {
+                "name": "Anatomy & Kinesiology",
+                "value": 90
+            },
+            {
+                "name": "Manual Therapy",
+                "value": 82
+            },
+            {
+                "name": "Patient Assessment",
+                "value": 85
+            },
+            {
+                "name": "Rehabilitation Planning",
+                "value": 80
+            },
+            {
+                "name": "Communication",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "sports"
+            ],
+            "riasec": [
+                "S",
+                "R",
+                "I"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 27,
+        "title": "Clinical Psychologist",
+        "description": "Assess, diagnose, and treat mental health conditions through therapy, helping individuals improve emotional wellbeing and coping skills.",
+        "skills": [
+            {
+                "name": "Psychological Assessment",
+                "value": 88
+            },
+            {
+                "name": "Therapeutic Techniques (CBT)",
+                "value": 85
+            },
+            {
+                "name": "Active Listening",
+                "value": 90
+            },
+            {
+                "name": "Case Documentation",
+                "value": 75
+            },
+            {
+                "name": "Research Methods",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "social"
+            ],
+            "riasec": [
+                "S",
+                "I",
+                "A"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 28,
+        "title": "Mechanical Engineer",
+        "description": "Design, analyze, and test mechanical systems ranging from engines and machines to consumer products and robotics.",
+        "skills": [
+            {
+                "name": "CAD (SolidWorks\/AutoCAD)",
+                "value": 88
+            },
+            {
+                "name": "Thermodynamics",
+                "value": 78
+            },
+            {
+                "name": "Materials Science",
+                "value": 75
+            },
+            {
+                "name": "FEA\/Simulation",
+                "value": 72
+            },
+            {
+                "name": "Problem Solving",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 29,
+        "title": "Electrical Engineer",
+        "description": "Design and develop electrical systems and components, from power grids and circuits to embedded systems and renewable energy tech.",
+        "skills": [
+            {
+                "name": "Circuit Design",
+                "value": 88
+            },
+            {
+                "name": "Embedded Systems",
+                "value": 78
+            },
+            {
+                "name": "MATLAB\/Simulink",
+                "value": 75
+            },
+            {
+                "name": "Power Systems",
+                "value": 72
+            },
+            {
+                "name": "Signal Processing",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 30,
+        "title": "Aerospace Engineer",
+        "description": "Design, build, and test aircraft, spacecraft, and defense systems, pushing the limits of flight and space exploration.",
+        "skills": [
+            {
+                "name": "Aerodynamics",
+                "value": 88
+            },
+            {
+                "name": "CAD & CFD Simulation",
+                "value": 80
+            },
+            {
+                "name": "Propulsion Systems",
+                "value": 75
+            },
+            {
+                "name": "Structural Analysis",
+                "value": 78
+            },
+            {
+                "name": "MATLAB\/Python",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "transport"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 31,
+        "title": "Chemical Engineer",
+        "description": "Design industrial processes to safely and efficiently transform raw materials into chemicals, fuels, pharmaceuticals, and food products.",
+        "skills": [
+            {
+                "name": "Process Design",
+                "value": 85
+            },
+            {
+                "name": "Thermodynamics",
+                "value": 80
+            },
+            {
+                "name": "Chemical Reaction Engineering",
+                "value": 78
+            },
+            {
+                "name": "Process Safety",
+                "value": 75
+            },
+            {
+                "name": "Data Analysis",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 32,
+        "title": "Environmental Engineer",
+        "description": "Design solutions to protect the environment, from clean water systems to pollution control and sustainable infrastructure.",
+        "skills": [
+            {
+                "name": "Environmental Regulations",
+                "value": 82
+            },
+            {
+                "name": "Water\/Wastewater Treatment",
+                "value": 80
+            },
+            {
+                "name": "GIS & Data Analysis",
+                "value": 72
+            },
+            {
+                "name": "Sustainability Design",
+                "value": 78
+            },
+            {
+                "name": "Project Management",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "env"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 33,
+        "title": "Graphic Designer",
+        "description": "Create visual concepts for branding, marketing, and digital products, communicating ideas through color, typography, and imagery.",
+        "skills": [
+            {
+                "name": "Adobe Photoshop\/Illustrator",
+                "value": 90
+            },
+            {
+                "name": "Typography",
+                "value": 80
+            },
+            {
+                "name": "Branding",
+                "value": 78
+            },
+            {
+                "name": "Layout & Composition",
+                "value": 82
+            },
+            {
+                "name": "Client Communication",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "design",
+                "media"
+            ],
+            "riasec": [
+                "A",
+                "R",
+                "I"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 34,
+        "title": "Film Director",
+        "description": "Lead the creative vision of films and shows, guiding actors, cinematography, and editing to bring stories to life on screen.",
+        "skills": [
+            {
+                "name": "Storytelling & Script Analysis",
+                "value": 90
+            },
+            {
+                "name": "Cinematography",
+                "value": 78
+            },
+            {
+                "name": "Directing Actors",
+                "value": 85
+            },
+            {
+                "name": "Editing Software",
+                "value": 70
+            },
+            {
+                "name": "Leadership",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "domains": [
+                "media",
+                "arts"
+            ],
+            "riasec": [
+                "A",
+                "E",
+                "S"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 35,
+        "title": "Content Creator",
+        "description": "Produce engaging video, written, or social content that builds audiences and drives brand awareness across digital platforms.",
+        "skills": [
+            {
+                "name": "Video Editing",
+                "value": 82
+            },
+            {
+                "name": "Storytelling",
+                "value": 85
+            },
+            {
+                "name": "Social Media Strategy",
+                "value": 80
+            },
+            {
+                "name": "On-Camera Presence",
+                "value": 75
+            },
+            {
+                "name": "Analytics",
+                "value": 68
+            }
+        ],
+        "traits": {
+            "domains": [
+                "media",
+                "arts"
+            ],
+            "riasec": [
+                "A",
+                "E",
+                "S"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 36,
+        "title": "Architect",
+        "description": "Design buildings and spaces that are functional, safe, and beautiful, balancing creativity with engineering and regulatory constraints.",
+        "skills": [
+            {
+                "name": "AutoCAD\/Revit",
+                "value": 88
+            },
+            {
+                "name": "Structural Principles",
+                "value": 75
+            },
+            {
+                "name": "Design Theory",
+                "value": 82
+            },
+            {
+                "name": "Building Codes",
+                "value": 70
+            },
+            {
+                "name": "3D Modeling (SketchUp)",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "design",
+                "eng"
+            ],
+            "riasec": [
+                "A",
+                "R",
+                "I"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 37,
+        "title": "Corporate Lawyer",
+        "description": "Advise businesses on contracts, mergers, compliance, and corporate governance to protect their legal and financial interests.",
+        "skills": [
+            {
+                "name": "Contract Law",
+                "value": 90
+            },
+            {
+                "name": "Legal Research & Writing",
+                "value": 88
+            },
+            {
+                "name": "Negotiation",
+                "value": 82
+            },
+            {
+                "name": "Corporate Governance",
+                "value": 75
+            },
+            {
+                "name": "Regulatory Compliance",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "law",
+                "business"
+            ],
+            "riasec": [
+                "E",
+                "I",
+                "C"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 38,
+        "title": "High School Teacher",
+        "description": "Educate and mentor students, designing lessons and fostering critical thinking to prepare the next generation for the future.",
+        "skills": [
+            {
+                "name": "Curriculum Planning",
+                "value": 85
+            },
+            {
+                "name": "Classroom Management",
+                "value": 82
+            },
+            {
+                "name": "Subject Expertise",
+                "value": 88
+            },
+            {
+                "name": "Communication",
+                "value": 90
+            },
+            {
+                "name": "Assessment & Grading",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "edu",
+                "social"
+            ],
+            "riasec": [
+                "S",
+                "A",
+                "I"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 39,
+        "title": "Commercial Airline Pilot",
+        "description": "Operate commercial aircraft safely and efficiently, transporting passengers and cargo across the globe.",
+        "skills": [
+            {
+                "name": "Flight Navigation",
+                "value": 92
+            },
+            {
+                "name": "Aviation Regulations",
+                "value": 85
+            },
+            {
+                "name": "Decision-Making Under Pressure",
+                "value": 90
+            },
+            {
+                "name": "Communication (ATC)",
+                "value": 82
+            },
+            {
+                "name": "Aircraft Systems Knowledge",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "transport",
+                "eng"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "diploma"
+        }
+    },
+    {
+        "id": 40,
+        "title": "AI Engineer",
+        "description": "Build intelligent applications powered by large language models, generative AI and machine learning, the fastest-growing role in tech.",
+        "skills": [
+            {
+                "name": "Python",
+                "value": 92
+            },
+            {
+                "name": "LLMs & Generative AI",
+                "value": 90
+            },
+            {
+                "name": "Machine Learning",
+                "value": 82
+            },
+            {
+                "name": "APIs & Backend Development",
+                "value": 80
+            },
+            {
+                "name": "Vector Databases & RAG",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "data"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 41,
+        "title": "Full Stack Developer",
+        "description": "Build complete web applications end to end, from beautiful user interfaces to the servers and databases behind them.",
+        "skills": [
+            {
+                "name": "JavaScript \/ TypeScript",
+                "value": 90
+            },
+            {
+                "name": "React",
+                "value": 85
+            },
+            {
+                "name": "Node.js \/ Backend APIs",
+                "value": 82
+            },
+            {
+                "name": "SQL & Databases",
+                "value": 78
+            },
+            {
+                "name": "Git & Deployment",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 42,
+        "title": "Ethical Hacker \/ Penetration Tester",
+        "description": "Legally hack into systems, networks and apps to find security weaknesses before real criminals do.",
+        "skills": [
+            {
+                "name": "Network Security",
+                "value": 88
+            },
+            {
+                "name": "Web App Exploitation",
+                "value": 85
+            },
+            {
+                "name": "Linux & Scripting",
+                "value": 82
+            },
+            {
+                "name": "Kali Linux Tools",
+                "value": 85
+            },
+            {
+                "name": "Report Writing",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "cyber",
+                "tech"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 43,
+        "title": "QA Automation Engineer",
+        "description": "Make sure software works flawlessly by designing automated tests that catch bugs before users ever see them.",
+        "skills": [
+            {
+                "name": "Test Automation (Selenium\/Playwright)",
+                "value": 85
+            },
+            {
+                "name": "Programming (Java\/Python\/JS)",
+                "value": 78
+            },
+            {
+                "name": "API Testing",
+                "value": 80
+            },
+            {
+                "name": "CI\/CD",
+                "value": 72
+            },
+            {
+                "name": "Attention to Detail",
+                "value": 90
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech"
+            ],
+            "riasec": [
+                "C",
+                "I",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 44,
+        "title": "Embedded Systems & IoT Engineer",
+        "description": "Program the tiny computers inside cars, medical devices, drones and smart homes that connect the physical world to the internet.",
+        "skills": [
+            {
+                "name": "C \/ C++",
+                "value": 90
+            },
+            {
+                "name": "Microcontrollers (ARM, ESP32)",
+                "value": 85
+            },
+            {
+                "name": "Electronics & Circuits",
+                "value": 80
+            },
+            {
+                "name": "RTOS",
+                "value": 72
+            },
+            {
+                "name": "IoT Protocols (MQTT, BLE)",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "tech"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 45,
+        "title": "Semiconductor Chip Design Engineer",
+        "description": "Design the microchips that power AI, smartphones and data centers, one of the most strategic careers in the world today.",
+        "skills": [
+            {
+                "name": "Digital Logic Design",
+                "value": 90
+            },
+            {
+                "name": "Verilog \/ SystemVerilog",
+                "value": 88
+            },
+            {
+                "name": "Computer Architecture",
+                "value": 82
+            },
+            {
+                "name": "EDA Tools (Cadence\/Synopsys)",
+                "value": 78
+            },
+            {
+                "name": "Design Verification",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "tech"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 46,
+        "title": "AR\/VR Developer",
+        "description": "Create immersive augmented and virtual reality experiences for gaming, education, healthcare and the spatial computing era.",
+        "skills": [
+            {
+                "name": "Unity \/ Unreal Engine",
+                "value": 88
+            },
+            {
+                "name": "C# \/ C++",
+                "value": 82
+            },
+            {
+                "name": "3D Math & Graphics",
+                "value": 78
+            },
+            {
+                "name": "XR Interaction Design",
+                "value": 80
+            },
+            {
+                "name": "3D Modeling Basics",
+                "value": 65
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "design"
+            ],
+            "riasec": [
+                "A",
+                "I",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 47,
+        "title": "Quantum Computing Engineer",
+        "description": "Work on the next computing revolution, programming quantum computers to solve problems classical computers cannot.",
+        "skills": [
+            {
+                "name": "Linear Algebra",
+                "value": 92
+            },
+            {
+                "name": "Quantum Mechanics",
+                "value": 85
+            },
+            {
+                "name": "Python & Qiskit",
+                "value": 82
+            },
+            {
+                "name": "Quantum Algorithms",
+                "value": 85
+            },
+            {
+                "name": "Research Skills",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "A"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 48,
+        "title": "AI Ethics & Governance Specialist",
+        "description": "Ensure artificial intelligence is safe, fair and compliant with new laws such as the EU AI Act.",
+        "skills": [
+            {
+                "name": "AI & ML Literacy",
+                "value": 78
+            },
+            {
+                "name": "Risk & Compliance",
+                "value": 85
+            },
+            {
+                "name": "Tech Policy & Regulation",
+                "value": 88
+            },
+            {
+                "name": "Ethical Reasoning",
+                "value": 90
+            },
+            {
+                "name": "Stakeholder Communication",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "law"
+            ],
+            "riasec": [
+                "I",
+                "E",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 49,
+        "title": "Drone \/ UAV Pilot",
+        "description": "Fly drones professionally for filmmaking, surveying, agriculture, inspections, delivery and emergency response.",
+        "skills": [
+            {
+                "name": "Drone Flight Operations",
+                "value": 90
+            },
+            {
+                "name": "Aviation Regulations",
+                "value": 80
+            },
+            {
+                "name": "Aerial Photography & Mapping",
+                "value": 78
+            },
+            {
+                "name": "GIS & Photogrammetry",
+                "value": 70
+            },
+            {
+                "name": "Safety & Risk Assessment",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "transport",
+                "eng"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "diploma"
+        }
+    },
+    {
+        "id": 50,
+        "title": "Entrepreneur \/ Startup Founder",
+        "description": "Turn your own idea into a company, build a team, win customers and create jobs and impact.",
+        "skills": [
+            {
+                "name": "Leadership",
+                "value": 90
+            },
+            {
+                "name": "Sales & Pitching",
+                "value": 85
+            },
+            {
+                "name": "Product Thinking",
+                "value": 82
+            },
+            {
+                "name": "Financial Management",
+                "value": 75
+            },
+            {
+                "name": "Resilience & Risk-Taking",
+                "value": 92
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business"
+            ],
+            "riasec": [
+                "E",
+                "A",
+                "S"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 51,
+        "title": "Quantitative Analyst (Quant)",
+        "description": "Use advanced mathematics and code to build trading strategies and price complex financial products at top hedge funds and banks.",
+        "skills": [
+            {
+                "name": "Probability & Statistics",
+                "value": 95
+            },
+            {
+                "name": "Python \/ C++",
+                "value": 88
+            },
+            {
+                "name": "Stochastic Calculus",
+                "value": 85
+            },
+            {
+                "name": "Financial Markets",
+                "value": 80
+            },
+            {
+                "name": "Machine Learning",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "finance",
+                "data"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "E"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 52,
+        "title": "E-commerce Manager",
+        "description": "Run and grow online stores on platforms like Shopify, Amazon and Daraz, from product listing to marketing and sales.",
+        "skills": [
+            {
+                "name": "Online Store Management",
+                "value": 88
+            },
+            {
+                "name": "Performance Marketing",
+                "value": 82
+            },
+            {
+                "name": "Analytics & Conversion",
+                "value": 80
+            },
+            {
+                "name": "Product Sourcing & Pricing",
+                "value": 75
+            },
+            {
+                "name": "Customer Experience",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business",
+                "media"
+            ],
+            "riasec": [
+                "E",
+                "C",
+                "A"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 53,
+        "title": "Business Development Manager",
+        "description": "Find new clients, partnerships and markets to grow a company's revenue, one of the most in-demand roles in every industry.",
+        "skills": [
+            {
+                "name": "Sales & Negotiation",
+                "value": 90
+            },
+            {
+                "name": "Relationship Building",
+                "value": 88
+            },
+            {
+                "name": "Market Research",
+                "value": 75
+            },
+            {
+                "name": "CRM Tools",
+                "value": 72
+            },
+            {
+                "name": "Presentation Skills",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business"
+            ],
+            "riasec": [
+                "E",
+                "S",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 54,
+        "title": "Customer Success Manager",
+        "description": "Help customers get maximum value from a product so they stay, grow and become loyal fans, a fast-rising role in SaaS companies.",
+        "skills": [
+            {
+                "name": "Relationship Management",
+                "value": 90
+            },
+            {
+                "name": "Communication",
+                "value": 88
+            },
+            {
+                "name": "Problem Solving",
+                "value": 82
+            },
+            {
+                "name": "Product Knowledge",
+                "value": 78
+            },
+            {
+                "name": "Data & CRM Tools",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business",
+                "social"
+            ],
+            "riasec": [
+                "S",
+                "E",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 55,
+        "title": "Social Media Manager",
+        "description": "Grow brands on Instagram, TikTok, YouTube and LinkedIn with creative content, community building and smart analytics.",
+        "skills": [
+            {
+                "name": "Content Strategy",
+                "value": 88
+            },
+            {
+                "name": "Copywriting",
+                "value": 82
+            },
+            {
+                "name": "Short-Form Video",
+                "value": 80
+            },
+            {
+                "name": "Social Analytics",
+                "value": 78
+            },
+            {
+                "name": "Community Management",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "media",
+                "business"
+            ],
+            "riasec": [
+                "A",
+                "E",
+                "S"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 56,
+        "title": "Sustainability \/ ESG Consultant",
+        "description": "Help companies cut carbon emissions, report on environmental and social impact, and build a greener economy.",
+        "skills": [
+            {
+                "name": "Carbon Accounting",
+                "value": 85
+            },
+            {
+                "name": "ESG Reporting Standards",
+                "value": 85
+            },
+            {
+                "name": "Data Analysis",
+                "value": 78
+            },
+            {
+                "name": "Strategy & Consulting",
+                "value": 80
+            },
+            {
+                "name": "Environmental Science",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "env",
+                "business"
+            ],
+            "riasec": [
+                "I",
+                "E",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 57,
+        "title": "Financial Advisor \/ Wealth Manager",
+        "description": "Guide individuals and families to invest, save, plan retirement and build long-term wealth.",
+        "skills": [
+            {
+                "name": "Investment Knowledge",
+                "value": 88
+            },
+            {
+                "name": "Financial Planning",
+                "value": 90
+            },
+            {
+                "name": "Client Relationships",
+                "value": 85
+            },
+            {
+                "name": "Tax & Retirement Rules",
+                "value": 75
+            },
+            {
+                "name": "Ethics & Compliance",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "domains": [
+                "finance",
+                "business"
+            ],
+            "riasec": [
+                "E",
+                "C",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 58,
+        "title": "Operations Manager",
+        "description": "Keep businesses running efficiently by managing people, processes, budgets and daily operations.",
+        "skills": [
+            {
+                "name": "Process Improvement",
+                "value": 88
+            },
+            {
+                "name": "People Management",
+                "value": 85
+            },
+            {
+                "name": "Budgeting",
+                "value": 78
+            },
+            {
+                "name": "Data-Driven Decisions",
+                "value": 80
+            },
+            {
+                "name": "Lean \/ Six Sigma",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business"
+            ],
+            "riasec": [
+                "E",
+                "C",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 59,
+        "title": "Psychiatrist",
+        "description": "Diagnose and treat mental illnesses as a medical doctor, combining therapy and medication to transform patients' lives.",
+        "skills": [
+            {
+                "name": "Clinical Diagnosis",
+                "value": 92
+            },
+            {
+                "name": "Psychopharmacology",
+                "value": 88
+            },
+            {
+                "name": "Psychotherapy",
+                "value": 82
+            },
+            {
+                "name": "Empathy & Listening",
+                "value": 95
+            },
+            {
+                "name": "Medical Knowledge",
+                "value": 90
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "social"
+            ],
+            "riasec": [
+                "I",
+                "S",
+                "A"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 60,
+        "title": "Nurse Practitioner",
+        "description": "Diagnose, treat and prescribe as an advanced-practice nurse, the fastest-growing occupation in the US.",
+        "skills": [
+            {
+                "name": "Clinical Assessment",
+                "value": 92
+            },
+            {
+                "name": "Diagnosis & Treatment",
+                "value": 88
+            },
+            {
+                "name": "Pharmacology",
+                "value": 85
+            },
+            {
+                "name": "Patient Communication",
+                "value": 90
+            },
+            {
+                "name": "Evidence-Based Practice",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health"
+            ],
+            "riasec": [
+                "S",
+                "I",
+                "R"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 61,
+        "title": "Physician Assistant",
+        "description": "Practice medicine as part of a physician-led team, diagnosing and treating patients across every specialty.",
+        "skills": [
+            {
+                "name": "Clinical Medicine",
+                "value": 90
+            },
+            {
+                "name": "Patient Examination",
+                "value": 88
+            },
+            {
+                "name": "Pharmacology",
+                "value": 82
+            },
+            {
+                "name": "Teamwork",
+                "value": 85
+            },
+            {
+                "name": "Medical Documentation",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health"
+            ],
+            "riasec": [
+                "S",
+                "I",
+                "R"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 62,
+        "title": "Medical Laboratory Scientist",
+        "description": "Run the lab tests that doctors rely on to diagnose disease, from blood work to DNA and infection testing.",
+        "skills": [
+            {
+                "name": "Clinical Laboratory Techniques",
+                "value": 90
+            },
+            {
+                "name": "Microbiology",
+                "value": 82
+            },
+            {
+                "name": "Hematology & Chemistry",
+                "value": 85
+            },
+            {
+                "name": "Quality Control",
+                "value": 80
+            },
+            {
+                "name": "Attention to Detail",
+                "value": 92
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 63,
+        "title": "Biotechnologist",
+        "description": "Use living cells and DNA to create new medicines, vaccines, crops and sustainable materials.",
+        "skills": [
+            {
+                "name": "Molecular Biology",
+                "value": 90
+            },
+            {
+                "name": "Genetic Engineering (CRISPR)",
+                "value": 82
+            },
+            {
+                "name": "Lab Techniques (PCR, Cell Culture)",
+                "value": 88
+            },
+            {
+                "name": "Bioinformatics",
+                "value": 72
+            },
+            {
+                "name": "Research & Data Analysis",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "science",
+                "health"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 64,
+        "title": "Health Informatics Specialist",
+        "description": "Combine healthcare and technology to manage patient data, electronic health records and digital health systems.",
+        "skills": [
+            {
+                "name": "Electronic Health Records",
+                "value": 85
+            },
+            {
+                "name": "Healthcare Data Analysis",
+                "value": 82
+            },
+            {
+                "name": "SQL & Databases",
+                "value": 75
+            },
+            {
+                "name": "Healthcare Standards (HL7\/FHIR)",
+                "value": 72
+            },
+            {
+                "name": "Clinical Knowledge",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "data"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 65,
+        "title": "Occupational Therapist",
+        "description": "Help people recover independence in daily life after injury, illness or disability.",
+        "skills": [
+            {
+                "name": "Patient Assessment",
+                "value": 88
+            },
+            {
+                "name": "Rehabilitation Planning",
+                "value": 85
+            },
+            {
+                "name": "Anatomy & Kinesiology",
+                "value": 80
+            },
+            {
+                "name": "Empathy & Patience",
+                "value": 92
+            },
+            {
+                "name": "Adaptive Equipment",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "social"
+            ],
+            "riasec": [
+                "S",
+                "I",
+                "R"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 66,
+        "title": "Speech-Language Pathologist",
+        "description": "Help children and adults overcome speech, language, voice and swallowing disorders.",
+        "skills": [
+            {
+                "name": "Communication Disorders",
+                "value": 90
+            },
+            {
+                "name": "Assessment & Diagnosis",
+                "value": 85
+            },
+            {
+                "name": "Therapy Planning",
+                "value": 85
+            },
+            {
+                "name": "Patience & Empathy",
+                "value": 92
+            },
+            {
+                "name": "Linguistics",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "edu"
+            ],
+            "riasec": [
+                "S",
+                "I",
+                "A"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 67,
+        "title": "Mental Health Counselor",
+        "description": "Support people through stress, anxiety, depression, trauma and life challenges with talk therapy.",
+        "skills": [
+            {
+                "name": "Counseling Techniques (CBT)",
+                "value": 88
+            },
+            {
+                "name": "Active Listening",
+                "value": 95
+            },
+            {
+                "name": "Empathy",
+                "value": 95
+            },
+            {
+                "name": "Assessment & Treatment Planning",
+                "value": 80
+            },
+            {
+                "name": "Ethics & Confidentiality",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "social",
+                "health"
+            ],
+            "riasec": [
+                "S",
+                "I",
+                "A"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 68,
+        "title": "Electric Vehicle (EV) Engineer",
+        "description": "Design the batteries, motors and power electronics driving the global shift to electric cars.",
+        "skills": [
+            {
+                "name": "Battery Systems & BMS",
+                "value": 85
+            },
+            {
+                "name": "Power Electronics",
+                "value": 85
+            },
+            {
+                "name": "Electric Motors",
+                "value": 80
+            },
+            {
+                "name": "MATLAB \/ Simulink",
+                "value": 78
+            },
+            {
+                "name": "Vehicle Systems Design",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "env"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 69,
+        "title": "Industrial Engineer",
+        "description": "Make factories, hospitals and supply chains faster, cheaper and safer by optimizing people, machines and processes.",
+        "skills": [
+            {
+                "name": "Process Optimization",
+                "value": 88
+            },
+            {
+                "name": "Lean & Six Sigma",
+                "value": 82
+            },
+            {
+                "name": "Operations Research",
+                "value": 78
+            },
+            {
+                "name": "Data Analysis",
+                "value": 80
+            },
+            {
+                "name": "Simulation Modeling",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "business"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 70,
+        "title": "Construction Manager",
+        "description": "Lead the building of skyscrapers, homes, roads and mega-projects from ground breaking to handover.",
+        "skills": [
+            {
+                "name": "Project Management",
+                "value": 90
+            },
+            {
+                "name": "Cost Estimation",
+                "value": 82
+            },
+            {
+                "name": "Construction Methods",
+                "value": 85
+            },
+            {
+                "name": "Leadership",
+                "value": 85
+            },
+            {
+                "name": "Safety Regulations",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "business"
+            ],
+            "riasec": [
+                "R",
+                "E",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 71,
+        "title": "Aircraft Maintenance Engineer",
+        "description": "Inspect, repair and certify aircraft so that every flight takes off safely.",
+        "skills": [
+            {
+                "name": "Aircraft Systems",
+                "value": 90
+            },
+            {
+                "name": "Mechanical & Avionics Repair",
+                "value": 88
+            },
+            {
+                "name": "Aviation Regulations",
+                "value": 85
+            },
+            {
+                "name": "Technical Documentation",
+                "value": 78
+            },
+            {
+                "name": "Attention to Detail",
+                "value": 95
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "transport"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "diploma"
+        }
+    },
+    {
+        "id": 72,
+        "title": "Astronaut",
+        "description": "Travel to space, conduct experiments on the space station and represent humanity beyond Earth, the ultimate dream career.",
+        "skills": [
+            {
+                "name": "STEM Expertise",
+                "value": 92
+            },
+            {
+                "name": "Physical Fitness",
+                "value": 90
+            },
+            {
+                "name": "Teamwork Under Pressure",
+                "value": 95
+            },
+            {
+                "name": "Piloting \/ Technical Skills",
+                "value": 85
+            },
+            {
+                "name": "Problem Solving",
+                "value": 92
+            }
+        ],
+        "traits": {
+            "domains": [
+                "science",
+                "transport"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "E"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 73,
+        "title": "Astrophysicist",
+        "description": "Uncover the secrets of stars, black holes, galaxies and the origin of the universe.",
+        "skills": [
+            {
+                "name": "Physics & Mathematics",
+                "value": 95
+            },
+            {
+                "name": "Programming (Python)",
+                "value": 82
+            },
+            {
+                "name": "Data Analysis",
+                "value": 85
+            },
+            {
+                "name": "Research & Writing",
+                "value": 85
+            },
+            {
+                "name": "Critical Thinking",
+                "value": 90
+            }
+        ],
+        "traits": {
+            "domains": [
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "A"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 74,
+        "title": "Environmental Scientist",
+        "description": "Study and protect the planet's air, water, soil and ecosystems from pollution and climate change.",
+        "skills": [
+            {
+                "name": "Environmental Data Analysis",
+                "value": 85
+            },
+            {
+                "name": "Field Sampling",
+                "value": 80
+            },
+            {
+                "name": "GIS Mapping",
+                "value": 75
+            },
+            {
+                "name": "Environmental Law",
+                "value": 70
+            },
+            {
+                "name": "Report Writing",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "env",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 75,
+        "title": "Marine Biologist",
+        "description": "Explore oceans and study marine life, from coral reefs to whales, and help protect ocean ecosystems.",
+        "skills": [
+            {
+                "name": "Marine Ecology",
+                "value": 88
+            },
+            {
+                "name": "Field Research & Diving",
+                "value": 82
+            },
+            {
+                "name": "Data Analysis",
+                "value": 78
+            },
+            {
+                "name": "Scientific Writing",
+                "value": 75
+            },
+            {
+                "name": "Conservation Biology",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "domains": [
+                "science",
+                "env"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 76,
+        "title": "Forensic Scientist",
+        "description": "Analyze crime-scene evidence such as DNA, fingerprints and digital traces to help solve crimes.",
+        "skills": [
+            {
+                "name": "Chemistry & Biology",
+                "value": 88
+            },
+            {
+                "name": "DNA & Evidence Analysis",
+                "value": 85
+            },
+            {
+                "name": "Lab Techniques",
+                "value": 85
+            },
+            {
+                "name": "Attention to Detail",
+                "value": 95
+            },
+            {
+                "name": "Court Testimony",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "science",
+                "law"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 77,
+        "title": "Criminal Lawyer",
+        "description": "Defend or prosecute people accused of crimes, fighting for justice inside the courtroom.",
+        "skills": [
+            {
+                "name": "Criminal Law",
+                "value": 92
+            },
+            {
+                "name": "Courtroom Advocacy",
+                "value": 90
+            },
+            {
+                "name": "Legal Research & Writing",
+                "value": 85
+            },
+            {
+                "name": "Negotiation",
+                "value": 80
+            },
+            {
+                "name": "Critical Thinking",
+                "value": 90
+            }
+        ],
+        "traits": {
+            "domains": [
+                "law"
+            ],
+            "riasec": [
+                "E",
+                "I",
+                "S"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 78,
+        "title": "Civil Services Officer (CSS \/ PCS)",
+        "description": "Serve your country as a senior government officer in administration, foreign affairs, police or revenue services.",
+        "skills": [
+            {
+                "name": "General Knowledge & Current Affairs",
+                "value": 90
+            },
+            {
+                "name": "Essay & English Writing",
+                "value": 88
+            },
+            {
+                "name": "Public Administration",
+                "value": 82
+            },
+            {
+                "name": "Leadership",
+                "value": 85
+            },
+            {
+                "name": "Integrity & Decision-Making",
+                "value": 92
+            }
+        ],
+        "traits": {
+            "domains": [
+                "gov",
+                "law"
+            ],
+            "riasec": [
+                "E",
+                "C",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 79,
+        "title": "Intelligence Analyst",
+        "description": "Analyze information from many sources to uncover threats and protect national security or businesses.",
+        "skills": [
+            {
+                "name": "Critical Analysis",
+                "value": 92
+            },
+            {
+                "name": "Research & OSINT",
+                "value": 88
+            },
+            {
+                "name": "Report Writing & Briefing",
+                "value": 85
+            },
+            {
+                "name": "Geopolitics",
+                "value": 78
+            },
+            {
+                "name": "Data Analysis",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "defense",
+                "gov"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "E"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 80,
+        "title": "Compliance Officer",
+        "description": "Make sure companies follow laws and regulations, preventing fraud, money laundering and costly penalties.",
+        "skills": [
+            {
+                "name": "Regulatory Knowledge",
+                "value": 90
+            },
+            {
+                "name": "Risk Assessment",
+                "value": 85
+            },
+            {
+                "name": "AML \/ KYC",
+                "value": 82
+            },
+            {
+                "name": "Policy Writing",
+                "value": 80
+            },
+            {
+                "name": "Integrity & Attention to Detail",
+                "value": 92
+            }
+        ],
+        "traits": {
+            "domains": [
+                "law",
+                "finance"
+            ],
+            "riasec": [
+                "C",
+                "E",
+                "I"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 81,
+        "title": "University Professor",
+        "description": "Teach at a university, mentor future leaders and conduct research that advances your field.",
+        "skills": [
+            {
+                "name": "Subject Expertise",
+                "value": 95
+            },
+            {
+                "name": "Research & Publishing",
+                "value": 90
+            },
+            {
+                "name": "Teaching & Mentoring",
+                "value": 88
+            },
+            {
+                "name": "Public Speaking",
+                "value": 82
+            },
+            {
+                "name": "Grant Writing",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "edu",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "S",
+                "A"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 82,
+        "title": "Instructional Designer \/ E-learning Developer",
+        "description": "Design engaging online courses and training programs used by schools, universities and companies.",
+        "skills": [
+            {
+                "name": "Learning Design (ADDIE)",
+                "value": 88
+            },
+            {
+                "name": "E-learning Tools (Articulate)",
+                "value": 82
+            },
+            {
+                "name": "Content Writing",
+                "value": 80
+            },
+            {
+                "name": "Multimedia Design",
+                "value": 75
+            },
+            {
+                "name": "LMS Management",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "edu",
+                "design"
+            ],
+            "riasec": [
+                "A",
+                "S",
+                "I"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 83,
+        "title": "Photographer",
+        "description": "Capture powerful images for weddings, fashion, brands, news and travel, and turn creativity into a career.",
+        "skills": [
+            {
+                "name": "Camera & Lighting",
+                "value": 90
+            },
+            {
+                "name": "Photo Editing (Lightroom \/ Photoshop)",
+                "value": 85
+            },
+            {
+                "name": "Composition & Visual Storytelling",
+                "value": 90
+            },
+            {
+                "name": "Client Management",
+                "value": 75
+            },
+            {
+                "name": "Business & Marketing",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "arts",
+                "media"
+            ],
+            "riasec": [
+                "A",
+                "R",
+                "E"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 84,
+        "title": "Music Producer",
+        "description": "Create, record, mix and produce songs for artists, films, games and your own music career.",
+        "skills": [
+            {
+                "name": "DAW Production (FL Studio \/ Ableton)",
+                "value": 90
+            },
+            {
+                "name": "Music Theory",
+                "value": 80
+            },
+            {
+                "name": "Mixing & Mastering",
+                "value": 82
+            },
+            {
+                "name": "Sound Design",
+                "value": 78
+            },
+            {
+                "name": "Creativity",
+                "value": 95
+            }
+        ],
+        "traits": {
+            "domains": [
+                "arts",
+                "media"
+            ],
+            "riasec": [
+                "A",
+                "R",
+                "E"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 85,
+        "title": "Actor",
+        "description": "Bring stories to life on stage, screen and streaming platforms, one of the world's most dreamed-of careers.",
+        "skills": [
+            {
+                "name": "Acting Technique",
+                "value": 92
+            },
+            {
+                "name": "Voice & Body Control",
+                "value": 85
+            },
+            {
+                "name": "Emotional Range",
+                "value": 90
+            },
+            {
+                "name": "Memorization",
+                "value": 82
+            },
+            {
+                "name": "Resilience",
+                "value": 90
+            }
+        ],
+        "traits": {
+            "domains": [
+                "arts",
+                "media"
+            ],
+            "riasec": [
+                "A",
+                "E",
+                "S"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 86,
+        "title": "Author \/ Writer",
+        "description": "Write books, scripts, articles and stories that inform, entertain and inspire readers around the world.",
+        "skills": [
+            {
+                "name": "Creative Writing",
+                "value": 92
+            },
+            {
+                "name": "Storytelling",
+                "value": 90
+            },
+            {
+                "name": "Editing & Grammar",
+                "value": 85
+            },
+            {
+                "name": "Research",
+                "value": 78
+            },
+            {
+                "name": "Self-Discipline",
+                "value": 88
+            }
+        ],
+        "traits": {
+            "domains": [
+                "arts",
+                "media"
+            ],
+            "riasec": [
+                "A",
+                "I",
+                "S"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 87,
+        "title": "Video Editor",
+        "description": "Turn raw footage into engaging YouTube videos, reels, ads and films, one of the most in-demand creative skills today.",
+        "skills": [
+            {
+                "name": "Premiere Pro \/ DaVinci Resolve",
+                "value": 90
+            },
+            {
+                "name": "Storytelling & Pacing",
+                "value": 88
+            },
+            {
+                "name": "Color Grading",
+                "value": 75
+            },
+            {
+                "name": "Motion Graphics (After Effects)",
+                "value": 72
+            },
+            {
+                "name": "Audio Editing",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "media",
+                "arts"
+            ],
+            "riasec": [
+                "A",
+                "R",
+                "C"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 88,
+        "title": "Esports Professional \/ Pro Gamer",
+        "description": "Compete in professional video game tournaments, stream to fans and build a career in the booming esports industry.",
+        "skills": [
+            {
+                "name": "Game Mastery",
+                "value": 95
+            },
+            {
+                "name": "Reflexes & Strategy",
+                "value": 92
+            },
+            {
+                "name": "Teamwork & Communication",
+                "value": 85
+            },
+            {
+                "name": "Mental Resilience",
+                "value": 88
+            },
+            {
+                "name": "Streaming & Branding",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "sports",
+                "media"
+            ],
+            "riasec": [
+                "R",
+                "E",
+                "A"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 89,
+        "title": "News Anchor \/ TV Presenter",
+        "description": "Present news, talk shows and live programs to millions of viewers on TV and digital media.",
+        "skills": [
+            {
+                "name": "On-Camera Presence",
+                "value": 92
+            },
+            {
+                "name": "Public Speaking",
+                "value": 92
+            },
+            {
+                "name": "Journalism & Current Affairs",
+                "value": 85
+            },
+            {
+                "name": "Interviewing",
+                "value": 82
+            },
+            {
+                "name": "Voice Modulation",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "media"
+            ],
+            "riasec": [
+                "E",
+                "A",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 90,
+        "title": "Flight Attendant \/ Cabin Crew",
+        "description": "Travel the world while ensuring passengers' safety and comfort on board international flights.",
+        "skills": [
+            {
+                "name": "Customer Service",
+                "value": 92
+            },
+            {
+                "name": "Safety & Emergency Procedures",
+                "value": 90
+            },
+            {
+                "name": "Communication & Languages",
+                "value": 85
+            },
+            {
+                "name": "Calm Under Pressure",
+                "value": 88
+            },
+            {
+                "name": "Grooming & Professionalism",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "transport",
+                "hospitality"
+            ],
+            "riasec": [
+                "S",
+                "E",
+                "R"
+            ],
+            "edu": "short"
+        }
+    },
+    {
+        "id": 91,
+        "title": "Plumber",
+        "description": "Install and repair water, gas and drainage systems that keep homes and buildings running.",
+        "skills": [
+            {
+                "name": "Pipe Installation & Repair",
+                "value": 90
+            },
+            {
+                "name": "Reading Blueprints",
+                "value": 75
+            },
+            {
+                "name": "Plumbing Codes",
+                "value": 82
+            },
+            {
+                "name": "Troubleshooting",
+                "value": 85
+            },
+            {
+                "name": "Customer Service",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "trades"
+            ],
+            "riasec": [
+                "R",
+                "C",
+                "I"
+            ],
+            "edu": "diploma"
+        }
+    },
+    {
+        "id": 92,
+        "title": "HVAC Technician",
+        "description": "Install and service heating, ventilation and air-conditioning systems in homes, offices and industry.",
+        "skills": [
+            {
+                "name": "HVAC Systems",
+                "value": 90
+            },
+            {
+                "name": "Electrical Troubleshooting",
+                "value": 82
+            },
+            {
+                "name": "Refrigeration",
+                "value": 85
+            },
+            {
+                "name": "Safety Procedures",
+                "value": 85
+            },
+            {
+                "name": "Customer Service",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "trades"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "diploma"
+        }
+    },
+    {
+        "id": 93,
+        "title": "Welder",
+        "description": "Join and fabricate metal for ships, pipelines, buildings, cars and aircraft.",
+        "skills": [
+            {
+                "name": "Welding Techniques (MIG \/ TIG \/ Stick)",
+                "value": 92
+            },
+            {
+                "name": "Blueprint Reading",
+                "value": 75
+            },
+            {
+                "name": "Metal Fabrication",
+                "value": 85
+            },
+            {
+                "name": "Safety Procedures",
+                "value": 88
+            },
+            {
+                "name": "Precision & Steady Hands",
+                "value": 88
+            }
+        ],
+        "traits": {
+            "domains": [
+                "trades"
+            ],
+            "riasec": [
+                "R",
+                "C",
+                "I"
+            ],
+            "edu": "diploma"
+        }
+    },
+    {
+        "id": 94,
+        "title": "Automotive Technician",
+        "description": "Diagnose and repair cars, from engines and electronics to the latest hybrid and electric vehicles.",
+        "skills": [
+            {
+                "name": "Vehicle Diagnostics",
+                "value": 90
+            },
+            {
+                "name": "Engine & Transmission Repair",
+                "value": 85
+            },
+            {
+                "name": "Automotive Electronics",
+                "value": 80
+            },
+            {
+                "name": "EV \/ Hybrid Systems",
+                "value": 72
+            },
+            {
+                "name": "Customer Communication",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "trades"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "C"
+            ],
+            "edu": "diploma"
+        }
+    },
+    {
+        "id": 95,
+        "title": "Chartered Accountant (CA \/ ACCA)",
+        "description": "Become a globally recognized accounting professional in audit, tax, financial reporting and corporate finance.",
+        "skills": [
+            {
+                "name": "Financial Reporting (IFRS)",
+                "value": 92
+            },
+            {
+                "name": "Audit & Assurance",
+                "value": 88
+            },
+            {
+                "name": "Taxation",
+                "value": 82
+            },
+            {
+                "name": "Excel & Financial Analysis",
+                "value": 85
+            },
+            {
+                "name": "Business Ethics",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "finance"
+            ],
+            "riasec": [
+                "C",
+                "I",
+                "E"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 96,
+        "title": "Banking Officer \/ Relationship Manager",
+        "description": "Build a stable, respected career in a bank managing customers, loans, investments and branch operations.",
+        "skills": [
+            {
+                "name": "Customer Relationship Management",
+                "value": 88
+            },
+            {
+                "name": "Banking Products & Credit",
+                "value": 85
+            },
+            {
+                "name": "Sales",
+                "value": 80
+            },
+            {
+                "name": "Compliance (AML \/ KYC)",
+                "value": 78
+            },
+            {
+                "name": "Communication",
+                "value": 88
+            }
+        ],
+        "traits": {
+            "domains": [
+                "finance",
+                "business"
+            ],
+            "riasec": [
+                "C",
+                "E",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 97,
+        "title": "Cardiologist",
+        "description": "Diagnose and treat heart disease, the world's leading cause of death, as one of medicine's most respected specialists.",
+        "skills": [
+            {
+                "name": "Cardiovascular Medicine",
+                "value": 95
+            },
+            {
+                "name": "Diagnostic Imaging (ECG \/ Echo)",
+                "value": 90
+            },
+            {
+                "name": "Clinical Decision-Making",
+                "value": 92
+            },
+            {
+                "name": "Interventional Procedures",
+                "value": 80
+            },
+            {
+                "name": "Patient Communication",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health"
+            ],
+            "riasec": [
+                "I",
+                "S",
+                "R"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 98,
+        "title": "Dermatologist",
+        "description": "Treat skin, hair and nail conditions and perform cosmetic procedures in one of medicine's most sought-after specialties.",
+        "skills": [
+            {
+                "name": "Clinical Dermatology",
+                "value": 92
+            },
+            {
+                "name": "Dermatologic Surgery",
+                "value": 82
+            },
+            {
+                "name": "Cosmetic Procedures",
+                "value": 80
+            },
+            {
+                "name": "Diagnostic Skills",
+                "value": 90
+            },
+            {
+                "name": "Patient Care",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health"
+            ],
+            "riasec": [
+                "I",
+                "S",
+                "R"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 99,
+        "title": "Makeup Artist",
+        "description": "Create stunning looks for brides, fashion shoots, films, TV and social media.",
+        "skills": [
+            {
+                "name": "Makeup Techniques",
+                "value": 92
+            },
+            {
+                "name": "Color Theory",
+                "value": 85
+            },
+            {
+                "name": "Skin Care Knowledge",
+                "value": 80
+            },
+            {
+                "name": "Client Management",
+                "value": 78
+            },
+            {
+                "name": "Social Media Branding",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "arts",
+                "design"
+            ],
+            "riasec": [
+                "A",
+                "S",
+                "E"
+            ],
+            "edu": "short"
+        }
+    },
+    {
+        "id": 100,
+        "title": "Cloud Engineer",
+        "description": "Build and run the cloud infrastructure on AWS, Azure and Google Cloud that powers modern apps and AI.",
+        "skills": [
+            {
+                "name": "AWS \/ Azure \/ GCP",
+                "value": 90
+            },
+            {
+                "name": "Linux & Networking",
+                "value": 82
+            },
+            {
+                "name": "Terraform (IaC)",
+                "value": 80
+            },
+            {
+                "name": "Docker & Kubernetes",
+                "value": 80
+            },
+            {
+                "name": "Scripting (Python \/ Bash)",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "cyber",
+                "tech"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 101,
+        "title": "Site Reliability Engineer (SRE)",
+        "description": "Keep the world's biggest apps fast and always online by engineering reliability, automation and monitoring.",
+        "skills": [
+            {
+                "name": "Linux & Distributed Systems",
+                "value": 88
+            },
+            {
+                "name": "Monitoring & Observability",
+                "value": 85
+            },
+            {
+                "name": "Kubernetes",
+                "value": 82
+            },
+            {
+                "name": "Programming (Go \/ Python)",
+                "value": 80
+            },
+            {
+                "name": "Incident Response",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "cyber"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 102,
+        "title": "Frontend Developer",
+        "description": "Build the fast, beautiful and accessible websites and web apps that users see and interact with.",
+        "skills": [
+            {
+                "name": "HTML & CSS",
+                "value": 90
+            },
+            {
+                "name": "JavaScript \/ TypeScript",
+                "value": 88
+            },
+            {
+                "name": "React \/ Next.js",
+                "value": 85
+            },
+            {
+                "name": "Responsive & Accessible Design",
+                "value": 80
+            },
+            {
+                "name": "Web Performance",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "design"
+            ],
+            "riasec": [
+                "I",
+                "A",
+                "R"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 103,
+        "title": "Backend Developer",
+        "description": "Build the servers, APIs and databases that power apps behind the scenes.",
+        "skills": [
+            {
+                "name": "Server-Side Language (Python \/ Java \/ Node)",
+                "value": 90
+            },
+            {
+                "name": "REST & GraphQL APIs",
+                "value": 85
+            },
+            {
+                "name": "SQL & NoSQL Databases",
+                "value": 85
+            },
+            {
+                "name": "Authentication & Security",
+                "value": 78
+            },
+            {
+                "name": "System Design",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 104,
+        "title": "IT Support Specialist",
+        "description": "Keep computers, networks and users running smoothly, the most common entry point into an IT career.",
+        "skills": [
+            {
+                "name": "Troubleshooting",
+                "value": 90
+            },
+            {
+                "name": "Operating Systems (Windows \/ macOS \/ Linux)",
+                "value": 85
+            },
+            {
+                "name": "Networking Basics",
+                "value": 75
+            },
+            {
+                "name": "Customer Service",
+                "value": 85
+            },
+            {
+                "name": "Ticketing Systems",
+                "value": 70
+            }
+        ],
+        "traits": {
+            "domains": [
+                "tech",
+                "trades"
+            ],
+            "riasec": [
+                "R",
+                "S",
+                "C"
+            ],
+            "edu": "short"
+        }
+    },
+    {
+        "id": 105,
+        "title": "SAP \/ ERP Consultant",
+        "description": "Implement the enterprise systems that run finance, supply chain and HR at the world's biggest companies.",
+        "skills": [
+            {
+                "name": "SAP S\/4HANA Modules (FI \/ MM \/ SD)",
+                "value": 88
+            },
+            {
+                "name": "Business Process Knowledge",
+                "value": 85
+            },
+            {
+                "name": "Configuration & Implementation",
+                "value": 82
+            },
+            {
+                "name": "Client Communication",
+                "value": 80
+            },
+            {
+                "name": "Data Migration",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business",
+                "tech"
+            ],
+            "riasec": [
+                "C",
+                "E",
+                "I"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 106,
+        "title": "Technical Writer",
+        "description": "Explain complex technology in clear, simple documentation, guides and help content.",
+        "skills": [
+            {
+                "name": "Clear Technical Writing",
+                "value": 92
+            },
+            {
+                "name": "Documentation Tools (Markdown \/ Docs-as-Code)",
+                "value": 80
+            },
+            {
+                "name": "Technical Understanding",
+                "value": 80
+            },
+            {
+                "name": "Information Architecture",
+                "value": 75
+            },
+            {
+                "name": "Editing",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "media",
+                "tech"
+            ],
+            "riasec": [
+                "A",
+                "I",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 107,
+        "title": "Game Designer",
+        "description": "Invent the rules, levels, characters and stories that make video games fun and addictive.",
+        "skills": [
+            {
+                "name": "Game Mechanics & Systems",
+                "value": 90
+            },
+            {
+                "name": "Level Design",
+                "value": 85
+            },
+            {
+                "name": "Prototyping (Unity \/ Unreal)",
+                "value": 78
+            },
+            {
+                "name": "Storytelling",
+                "value": 80
+            },
+            {
+                "name": "Player Psychology",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "domains": [
+                "design",
+                "tech"
+            ],
+            "riasec": [
+                "A",
+                "I",
+                "E"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 108,
+        "title": "Data Center Technician",
+        "description": "Keep the massive data centers behind AI, cloud and the internet running around the clock.",
+        "skills": [
+            {
+                "name": "Server Hardware",
+                "value": 88
+            },
+            {
+                "name": "Networking & Cabling",
+                "value": 82
+            },
+            {
+                "name": "Power & Cooling Systems",
+                "value": 75
+            },
+            {
+                "name": "Troubleshooting",
+                "value": 85
+            },
+            {
+                "name": "Safety Procedures",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "trades",
+                "tech"
+            ],
+            "riasec": [
+                "R",
+                "C",
+                "I"
+            ],
+            "edu": "diploma"
+        }
+    },
+    {
+        "id": 109,
+        "title": "Project Manager (PMP)",
+        "description": "Lead projects in any industry, delivering them on time, on budget and to the right quality.",
+        "skills": [
+            {
+                "name": "Planning & Scheduling",
+                "value": 90
+            },
+            {
+                "name": "Stakeholder Management",
+                "value": 88
+            },
+            {
+                "name": "Risk Management",
+                "value": 82
+            },
+            {
+                "name": "Agile & Scrum",
+                "value": 80
+            },
+            {
+                "name": "Leadership",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business"
+            ],
+            "riasec": [
+                "E",
+                "C",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 110,
+        "title": "SEO Specialist",
+        "description": "Get websites to the top of Google and AI search results, driving free traffic and sales.",
+        "skills": [
+            {
+                "name": "Keyword Research",
+                "value": 88
+            },
+            {
+                "name": "On-Page & Technical SEO",
+                "value": 85
+            },
+            {
+                "name": "Content Strategy",
+                "value": 80
+            },
+            {
+                "name": "Link Building",
+                "value": 75
+            },
+            {
+                "name": "Analytics (GA4 \/ Search Console)",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "media",
+                "data"
+            ],
+            "riasec": [
+                "E",
+                "C",
+                "I"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 111,
+        "title": "Copywriter \/ Content Writer",
+        "description": "Write the words that sell: ads, websites, emails, blogs and social posts for brands worldwide.",
+        "skills": [
+            {
+                "name": "Persuasive Writing",
+                "value": 90
+            },
+            {
+                "name": "SEO Writing",
+                "value": 80
+            },
+            {
+                "name": "Research",
+                "value": 78
+            },
+            {
+                "name": "Brand Voice",
+                "value": 82
+            },
+            {
+                "name": "Editing & Proofreading",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "media",
+                "arts"
+            ],
+            "riasec": [
+                "A",
+                "E",
+                "S"
+            ],
+            "edu": "self"
+        }
+    },
+    {
+        "id": 112,
+        "title": "Virtual Assistant",
+        "description": "Support entrepreneurs and companies worldwide remotely with admin, email, scheduling, research and social media.",
+        "skills": [
+            {
+                "name": "Communication",
+                "value": 90
+            },
+            {
+                "name": "Organization & Time Management",
+                "value": 90
+            },
+            {
+                "name": "Google Workspace \/ MS Office",
+                "value": 85
+            },
+            {
+                "name": "Online Tools (Canva, CRM)",
+                "value": 75
+            },
+            {
+                "name": "Customer Service",
+                "value": 82
+            }
+        ],
+        "traits": {
+            "domains": [
+                "business"
+            ],
+            "riasec": [
+                "C",
+                "S",
+                "E"
+            ],
+            "edu": "short"
+        }
+    },
+    {
+        "id": 113,
+        "title": "Tourism & Travel Manager",
+        "description": "Plan unforgettable trips and run tourism businesses in one of the world's largest and fastest-recovering industries.",
+        "skills": [
+            {
+                "name": "Travel Planning & Operations",
+                "value": 88
+            },
+            {
+                "name": "Customer Service",
+                "value": 88
+            },
+            {
+                "name": "Destination Knowledge",
+                "value": 80
+            },
+            {
+                "name": "Marketing & Sales",
+                "value": 78
+            },
+            {
+                "name": "Languages",
+                "value": 72
+            }
+        ],
+        "traits": {
+            "domains": [
+                "hospitality",
+                "transport"
+            ],
+            "riasec": [
+                "E",
+                "S",
+                "A"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 114,
+        "title": "Pediatrician",
+        "description": "Care for the health of babies, children and teenagers as they grow.",
+        "skills": [
+            {
+                "name": "Pediatric Medicine",
+                "value": 92
+            },
+            {
+                "name": "Child Development",
+                "value": 88
+            },
+            {
+                "name": "Diagnosis",
+                "value": 90
+            },
+            {
+                "name": "Communication with Families",
+                "value": 90
+            },
+            {
+                "name": "Empathy & Patience",
+                "value": 92
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health"
+            ],
+            "riasec": [
+                "S",
+                "I",
+                "R"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 115,
+        "title": "Gynecologist \/ Obstetrician",
+        "description": "Care for women's health, pregnancy and childbirth, bringing new lives into the world.",
+        "skills": [
+            {
+                "name": "Obstetrics & Gynecology",
+                "value": 92
+            },
+            {
+                "name": "Surgical Skills",
+                "value": 85
+            },
+            {
+                "name": "Prenatal Care",
+                "value": 90
+            },
+            {
+                "name": "Emergency Decision-Making",
+                "value": 88
+            },
+            {
+                "name": "Patient Communication",
+                "value": 88
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health"
+            ],
+            "riasec": [
+                "I",
+                "S",
+                "R"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 116,
+        "title": "Anesthesiologist",
+        "description": "Keep patients safe, pain-free and asleep during surgery, one of medicine's highest-paid specialties.",
+        "skills": [
+            {
+                "name": "Anesthesia & Pharmacology",
+                "value": 95
+            },
+            {
+                "name": "Critical Care",
+                "value": 88
+            },
+            {
+                "name": "Airway Management",
+                "value": 90
+            },
+            {
+                "name": "Calm Under Pressure",
+                "value": 95
+            },
+            {
+                "name": "Patient Monitoring",
+                "value": 90
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 117,
+        "title": "Radiologist",
+        "description": "Diagnose disease by reading X-rays, CT, MRI and ultrasound scans, increasingly with the help of AI.",
+        "skills": [
+            {
+                "name": "Medical Imaging Interpretation",
+                "value": 95
+            },
+            {
+                "name": "Anatomy",
+                "value": 92
+            },
+            {
+                "name": "AI-Assisted Diagnosis",
+                "value": 72
+            },
+            {
+                "name": "Interventional Procedures",
+                "value": 75
+            },
+            {
+                "name": "Attention to Detail",
+                "value": 95
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 118,
+        "title": "Orthopedic Surgeon",
+        "description": "Repair bones, joints and muscles, restoring movement for athletes, accident victims and the elderly.",
+        "skills": [
+            {
+                "name": "Orthopedic Surgery",
+                "value": 95
+            },
+            {
+                "name": "Musculoskeletal Anatomy",
+                "value": 92
+            },
+            {
+                "name": "Surgical Precision",
+                "value": 92
+            },
+            {
+                "name": "Sports Medicine",
+                "value": 78
+            },
+            {
+                "name": "Physical Stamina",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "S"
+            ],
+            "edu": "long"
+        }
+    },
+    {
+        "id": 119,
+        "title": "Public Health Specialist \/ Epidemiologist",
+        "description": "Protect the health of whole populations by tracking diseases, preventing outbreaks and shaping health policy.",
+        "skills": [
+            {
+                "name": "Epidemiology",
+                "value": 90
+            },
+            {
+                "name": "Biostatistics",
+                "value": 85
+            },
+            {
+                "name": "Data Analysis (R \/ Python)",
+                "value": 78
+            },
+            {
+                "name": "Health Policy",
+                "value": 80
+            },
+            {
+                "name": "Program Planning",
+                "value": 78
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "S",
+                "C"
+            ],
+            "edu": "master"
+        }
+    },
+    {
+        "id": 120,
+        "title": "Clinical Research Associate",
+        "description": "Help bring new medicines and vaccines to patients by running and monitoring clinical trials.",
+        "skills": [
+            {
+                "name": "Good Clinical Practice (GCP)",
+                "value": 90
+            },
+            {
+                "name": "Regulatory Knowledge",
+                "value": 82
+            },
+            {
+                "name": "Site Monitoring",
+                "value": 85
+            },
+            {
+                "name": "Documentation & Data Accuracy",
+                "value": 88
+            },
+            {
+                "name": "Communication",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "health",
+                "science"
+            ],
+            "riasec": [
+                "I",
+                "C",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 121,
+        "title": "Renewable Energy Engineer",
+        "description": "Design solar farms, wind projects and battery storage systems powering the clean-energy transition.",
+        "skills": [
+            {
+                "name": "Solar & Wind Systems",
+                "value": 88
+            },
+            {
+                "name": "Power Systems",
+                "value": 85
+            },
+            {
+                "name": "Energy Modeling (PVsyst \/ HOMER)",
+                "value": 80
+            },
+            {
+                "name": "Battery Storage",
+                "value": 75
+            },
+            {
+                "name": "Project Design",
+                "value": 80
+            }
+        ],
+        "traits": {
+            "domains": [
+                "eng",
+                "env"
+            ],
+            "riasec": [
+                "R",
+                "I",
+                "S"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 122,
+        "title": "Special Education Teacher",
+        "description": "Teach and empower children with learning, physical or developmental differences to reach their full potential.",
+        "skills": [
+            {
+                "name": "Individualized Instruction",
+                "value": 90
+            },
+            {
+                "name": "Behavior Management",
+                "value": 85
+            },
+            {
+                "name": "Patience & Empathy",
+                "value": 95
+            },
+            {
+                "name": "Assessment & IEPs",
+                "value": 82
+            },
+            {
+                "name": "Communication with Families",
+                "value": 85
+            }
+        ],
+        "traits": {
+            "domains": [
+                "edu",
+                "social"
+            ],
+            "riasec": [
+                "S",
+                "A",
+                "I"
+            ],
+            "edu": "bachelor"
+        }
+    },
+    {
+        "id": 123,
+        "title": "Food Scientist \/ Food Technologist",
+        "description": "Create safer, healthier and more sustainable foods, from new snacks to plant-based proteins.",
+        "skills": [
+            {
+                "name": "Food Chemistry",
+                "value": 88
+            },
+            {
+                "name": "Food Safety (HACCP)",
+                "value": 85
+            },
+            {
+                "name": "Product Development",
+                "value": 82
+            },
+            {
+                "name": "Quality Control",
+                "value": 80
+            },
+            {
+                "name": "Nutrition",
+                "value": 75
+            }
+        ],
+        "traits": {
+            "domains": [
+                "science",
+                "agri"
+            ],
+            "riasec": [
+                "I",
+                "R",
+                "C"
+            ],
+            "edu": "bachelor"
+        }
+    }
+]

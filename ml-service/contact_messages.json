@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Moazmma Sheraz",
+    "email": "moazmmasheraz1510@gmail.com",
+    "message": "Hi",
+    "submitted_at": "2026-08-30 10:17:45"
+  },
+  {
+    "id": 2,
+    "name": "Asra ",
+    "email": "asra00@gmail.com",
+    "message": "All good",
+    "submitted_at": "2026-08-30 10:29:22"
+  },
+  {
+    "id": 3,
+    "name": "DURK",
+    "email": "moazmma.18930@zu.edu.pk",
+    "message": "bbc news",
+    "submitted_at": "2026-09-07 19:34:05"
+  }
+]

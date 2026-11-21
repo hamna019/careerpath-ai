@@ -1,0 +1,614 @@
+import { useState, useEffect, useRef, useCallback } from 'react';
+import axios from 'axios';
+
+import LandingPage from './components/LandingPage';
+import AuthPage from './components/AuthPage';
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
+import StudentDashboard from "./components/StudentDashboard";
+import AdminDashboard from "./components/AdminDashboard";
+import StudentResults from "./components/StudentResults"; 
+import BrowseCareers from "./components/BrowseCareers";
+import CareerDetails from "./components/CareerDetails";
+import UserProfile from "./components/UserProfile";
+import CareerAssessment from "./components/CareerAssessment";
+import CareerResults from './components/CareerResults';
+import CareerRoadmapProgress from './components/CareerRoadmapProgress';
+import StudentAssessmentHistory from './components/StudentAssessmentHistory';
+import ProfileCompletionModal from './components/ProfileCompletionModal';
+import useModalHistory from './utils/useModalHistory';
+import {
+  getAuth, pathFor, resolveFromPath, guardScreen, writeHistory,
+  ensureEntryKey, enterEntry, saveScroll, restoreScroll,
+} from './utils/navHistory';
+import { API_BASE_URL } from './config/api';
+
+axios.defaults.baseURL = API_BASE_URL;
+
+const getResetLinkParams = () => {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('reset_email');
+    const token = params.get('reset_token');
+    return email && token ? { email, token } : null;
+  } catch {
+    return null;
+  }
+};
+
+const ADMIN_VIEWS = ['dashboard', 'careers', 'quiz', 'total-students', 'recent-activity'];
+
+const getBootState = () => {
+  ensureEntryKey();
+  if (getResetLinkParams()) return { screen: 'reset-password', adminView: 'dashboard' };
+
+  const auth = getAuth();
+  const saved = window.history.state || {};
+  const fromPath = resolveFromPath(window.location.pathname);
+  const sameEntry = saved.screen === fromPath.screen;
+  let screen = guardScreen(fromPath.screen, auth);
+
+  // These need data from an earlier step, or must pass the profile check first.
+  const home = auth.role === 'admin' ? 'admin-dash' : 'student-dash';
+  if (screen === 'quiz') screen = home;
+  if (screen === 'career-details' && !(sameEntry && saved.careerData)) screen = 'browse-careers';
+  if (screen === 'career-results' && !(sameEntry && saved.answers)) screen = home;
+
+  return {
+    screen,
+    adminView: screen === 'admin-dash' ? fromPath.adminView || 'dashboard' : 'dashboard',
+    careerData: sameEntry ? saved.careerData ?? null : null,
+    careerId: sameEntry ? saved.careerId ?? null : null,
+    answers: sameEntry ? saved.answers ?? null : null,
+  };
+};
+
+export default function App() {
+  const [boot] = useState(getBootState);
+  const [currentScreen, setScreenRaw] = useState(boot.screen);
+  // Remember the scroll position of the page we are leaving before switching.
+  const setCurrentScreen = (screen) => {
+    saveScroll();
+    setScreenRaw(screen);
+  };
+  const [authMode, setAuthMode] = useState('login');
+  const [forgotPasswordRole, setForgotPasswordRole] = useState('student');
+  const [adminInitialView, setAdminInitialView] = useState(boot.adminView);
+  const handleAdminInitialViewConsumed = useCallback(() => setAdminInitialView('dashboard'), []);
+  const [resetLinkParams] = useState(getResetLinkParams);
+  const [selectedCareerData, setSelectedCareerData] = useState(boot.careerData); 
+  const [selectedCareerId, setSelectedCareerId] = useState(boot.careerId); 
+  
+  const [backendStatus, setBackendStatus] = useState('checking');
+  const [profileGate, setProfileGate] = useState(null);
+  const [profileAutoEdit, setProfileAutoEdit] = useState(false);
+
+  const openQuiz = async () => {
+    try {
+      const token = sessionStorage.getItem('token');
+      const res = await axios.get('/profile/completion', { headers: { Authorization: `Bearer ${token}` } });
+      if (!res.data?.eligible) {
+        setProfileGate(res.data);
+        return;
+      }
+    } catch (err) {
+      console.error('Could not check profile completion', err);
+    }
+    setCurrentScreen('quiz');
+  };
+
+  const [quizAnswers, setQuizAnswers] = useState(boot.answers || {
+    q1: null, q2: null, q3: null, q4: null, q5: null,
+    q6: null, q7: null, q8: null, q9: null, q10: null
+  });
+
+  const bootedRef = useRef(false);
+  useModalHistory(!!profileGate, () => setProfileGate(null));
+
+  // Every screen change becomes a browser history entry with its own URL.
+  useEffect(() => {
+    const state = {
+      screen: currentScreen,
+      adminView: currentScreen === 'admin-dash' ? adminInitialView : undefined,
+      careerData: currentScreen === 'career-details' ? selectedCareerData : undefined,
+      careerId: selectedCareerId,
+      answers: currentScreen === 'career-results' ? quizAnswers : undefined,
+    };
+    const path = pathFor(currentScreen, state.adminView);
+
+    if (!bootedRef.current) {
+      bootedRef.current = true;
+      writeHistory('replaceState', state, path);
+      return;
+    }
+    if (window.history.state?.screen === currentScreen) return;
+    writeHistory('pushState', state, path);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentScreen]);
+
+  // Browser Back / Forward: restore the screen that entry was showing.
+  useEffect(() => {
+    const onPopState = (e) => {
+      saveScroll();
+      const saved = e.state || {};
+      const target = saved.screen
+        ? { screen: saved.screen, adminView: saved.adminView }
+        : resolveFromPath(window.location.pathname);
+      const screen = guardScreen(target.screen, getAuth(), !!resetLinkParams);
+      const allowed = screen === target.screen;
+
+      if (!allowed) {
+        writeHistory('replaceState', { screen }, pathFor(screen));
+      }
+      setSelectedCareerData(allowed ? saved.careerData ?? null : null);
+      setSelectedCareerId(allowed ? saved.careerId ?? null : null);
+      if (allowed && saved.answers) setQuizAnswers(saved.answers);
+      setAdminInitialView(allowed ? target.adminView || 'dashboard' : 'dashboard');
+      setScreenRaw(screen);
+      enterEntry();
+    };
+    window.history.scrollRestoration = 'manual';
+    window.addEventListener('popstate', onPopState);
+    window.addEventListener('pagehide', saveScroll);
+    return () => {
+      window.removeEventListener('popstate', onPopState);
+      window.removeEventListener('pagehide', saveScroll);
+    };
+  }, [resetLinkParams]);
+
+  const handleLogout = async () => {
+    const historyId = sessionStorage.getItem('login_history_id');
+    if (historyId) {
+      try {
+        await axios.post('/logout', { login_history_id: historyId });
+      } catch (err) {
+        console.error("Logout error:", err);
+      }
+    }
+    sessionStorage.clear();
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    const handleTabClose = () => {
+      if (sessionStorage.getItem('skip_next_unload_logout')) {
+        sessionStorage.removeItem('skip_next_unload_logout');
+        return;
+      }
+
+      const historyId = sessionStorage.getItem('login_history_id');
+      if (historyId) {
+        const url = `${API_BASE_URL}/logout`;
+        const data = new FormData();
+        data.append('login_history_id', historyId);
+        navigator.sendBeacon(url, data);
+      }
+    };
+
+    window.addEventListener('beforeunload', handleTabClose);
+    return () => {
+      window.removeEventListener('beforeunload', handleTabClose);
+    };
+  }, []);
+
+  useEffect(() => {
+    const PING_INTERVAL_MS = 20000;
+
+    const sendPing = () => {
+      const historyId = sessionStorage.getItem('login_history_id');
+      if (!historyId) return;
+      axios.post('/session/ping', { login_history_id: historyId }).catch(() => {});
+    };
+
+    sendPing();
+    const pingInterval = setInterval(sendPing, PING_INTERVAL_MS);
+    return () => clearInterval(pingInterval);
+  }, []);
+
+  useEffect(() => {
+    restoreScroll();
+  }, [currentScreen, authMode]);
+
+  useEffect(() => {
+    if (resetLinkParams) {
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, [resetLinkParams]);
+
+  useEffect(() => {
+    axios.get('/test-connection')
+      .then((res) => {
+        console.log("Backend Connected:", res.data);
+        setBackendStatus('connected');
+      })
+      .catch((err) => {
+        console.warn("Backend Not Connected Yet:", err.message);
+        setBackendStatus('disconnected');
+      });
+  }, []);
+
+  useEffect(() => {
+    const FLUSH_INTERVAL_MS = 20000;
+    const HEARTBEAT_URL = `${API_BASE_URL}/student/activity-heartbeat`;
+
+    let pendingSeconds = 0;
+
+    const getAuth = () => {
+      const token = sessionStorage.getItem('token');
+      if (!token) return null;
+      let storedUser;
+      try {
+        storedUser = JSON.parse(sessionStorage.getItem('user') || 'null');
+      } catch {
+        storedUser = null;
+      }
+      if (storedUser?.role === 'admin') return null;
+      return token;
+    };
+
+    const isActiveNow = () =>
+      document.visibilityState === 'visible' && document.hasFocus();
+
+    const tickInterval = setInterval(() => {
+      if (getAuth() && isActiveNow()) {
+        pendingSeconds += 1;
+      }
+    }, 1000);
+
+    const flush = (useKeepalive = false) => {
+      if (pendingSeconds <= 0) return;
+      const token = getAuth();
+      if (!token) {
+        pendingSeconds = 0;
+        return;
+      }
+      const seconds = pendingSeconds;
+      pendingSeconds = 0;
+
+      if (useKeepalive && typeof fetch === 'function') {
+        fetch(HEARTBEAT_URL, {
+          method: 'POST',
+          keepalive: true,
+          headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+          body: JSON.stringify({ seconds }),
+        }).catch(() => {});
+        return;
+      }
+
+      axios.post('/student/activity-heartbeat', { seconds }, {
+        headers: { Authorization: `Bearer ${token}` }
+      }).catch(() => {});
+    };
+
+    const flushInterval = setInterval(() => flush(false), FLUSH_INTERVAL_MS);
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') flush(true);
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('beforeunload', () => flush(true));
+
+    return () => {
+      clearInterval(tickInterval);
+      clearInterval(flushInterval);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      flush(true);
+    };
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-[#fafafa] text-[#111111] relative">
+      
+      <div className="fixed bottom-4 right-4 z-50 text-xs px-3 py-1.5 rounded-full shadow-lg font-medium border transition-all">
+        {backendStatus === 'checking' && (
+          <span className="bg-yellow-100 text-yellow-800 border-yellow-300">
+            🟡 Connecting Backend...
+          </span>
+        )}
+        {backendStatus === 'connected' && (
+          <span className="bg-green-100 text-green-800 border-green-300">
+            🟢 Laravel Connected
+          </span>
+        )}
+        {backendStatus === 'disconnected' && (
+          <span className="bg-red-100 text-red-800 border-red-300">
+            🔴 Laravel Offline (Start php artisan serve)
+          </span>
+        )}
+      </div>
+      
+      {currentScreen === 'home' && (
+        <LandingPage 
+          onNavigate={() => {
+            setAuthMode('login');
+            setCurrentScreen('auth');
+          }} 
+        />
+      )}
+      
+      {currentScreen === 'auth' && (
+        <AuthPage
+          mode={authMode}
+          setMode={setAuthMode}
+          onBackHome={() => setCurrentScreen('home')}
+          onForgotPassword={(role) => {
+            setForgotPasswordRole(role);
+            setCurrentScreen('forgot-password');
+          }}
+        />
+      )}
+
+      {currentScreen === 'forgot-password' && (
+        <ForgotPassword
+          role={forgotPasswordRole}
+          onBackToLogin={() => {
+            setAuthMode('login');
+            setCurrentScreen('auth');
+          }}
+        />
+      )}
+
+      {currentScreen === 'reset-password' && resetLinkParams && (
+        <ResetPassword
+          email={resetLinkParams.email}
+          token={resetLinkParams.token}
+          onDone={() => {
+            setAuthMode('login');
+            setCurrentScreen('auth');
+          }}
+        />
+      )}
+
+      {currentScreen === 'student-dash' && (
+        <StudentDashboard
+          onLogout={handleLogout}
+          onNavigate={(target, data) => {
+            if (target === 'browse') {
+              setSelectedCareerId(null);
+              setCurrentScreen('browse-careers');
+            } else if (target === 'profile') {
+              setCurrentScreen('profile');
+            } else if (target === 'quiz') {
+              openQuiz();
+            } else if (target === 'details') {
+              setSelectedCareerData(data);
+              setCurrentScreen('career-details');
+            } else if (target === 'roadmap') {
+              setCurrentScreen('career-roadmap');
+            } else if (target === 'assessment-history') {
+              setCurrentScreen('assessment-history');
+            } else {
+              setCurrentScreen('student-dash');
+            }
+          }}
+        />
+      )}
+
+      {currentScreen === 'career-roadmap' && (
+        <CareerRoadmapProgress
+          onLogout={handleLogout}
+          onNavigate={(target) => {
+            if (target === 'browse') {
+              setSelectedCareerId(null);
+              setCurrentScreen('browse-careers');
+            } else if (target === 'quiz') {
+              openQuiz();
+            } else if (target === 'profile') {
+              setCurrentScreen('profile');
+            } else if (target === 'assessment-history') {
+              setCurrentScreen('assessment-history');
+            } else {
+              setCurrentScreen('student-dash');
+            }
+          }}
+        />
+      )}
+
+      {currentScreen === 'assessment-history' && (
+        <StudentAssessmentHistory
+          onLogout={handleLogout}
+          onNavigate={(target) => {
+            if (target === 'browse') {
+              setSelectedCareerId(null);
+              setCurrentScreen('browse-careers');
+            } else if (target === 'quiz') {
+              openQuiz();
+            } else if (target === 'profile') {
+              setCurrentScreen('profile');
+            } else if (target === 'roadmap') {
+              setCurrentScreen('career-roadmap');
+            } else {
+              setCurrentScreen('student-dash');
+            }
+          }}
+        />
+      )}
+
+      {currentScreen === 'admin-dash' && (
+        <AdminDashboard 
+          onLogout={handleLogout} 
+          initialView={adminInitialView}
+          onInitialViewConsumed={handleAdminInitialViewConsumed}
+          onNavigateToResults={() => setCurrentScreen('student-results')} 
+          onNavigate={(target) => {
+            if (target === 'student-results') {
+              setCurrentScreen('student-results');
+            } else if (target === 'settings' || target === 'profile' || target === 'admin-settings') {
+              setCurrentScreen('profile');
+            } else {
+              setCurrentScreen('admin-dash');
+            }
+          }}
+        />
+      )}
+
+      {currentScreen === 'student-results' && (
+        <StudentResults
+          onLogout={handleLogout}
+          onNavigate={(target) => {
+            if (target === 'settings' || target === 'profile' || target === 'admin-settings') {
+              setCurrentScreen('profile');
+            } else if (target === 'results') {
+              setCurrentScreen('student-results');
+            } else {
+              if (ADMIN_VIEWS.includes(target)) setAdminInitialView(target);
+              setCurrentScreen('admin-dash');
+            }
+          }}
+        />
+      )}
+
+      {currentScreen === 'browse-careers' && (
+        <BrowseCareers 
+          activeCareerId={selectedCareerId} 
+          onLogout={handleLogout}
+          onNavigate={(target, data) => {
+            if (target === 'dashboard') {
+              const storedUser = JSON.parse(sessionStorage.getItem('user') || '{}');
+              setCurrentScreen(storedUser.role === 'admin' ? 'admin-dash' : 'student-dash');
+            } else if (target === 'profile') {
+              setCurrentScreen('profile'); 
+            } else if (target === 'quiz') {
+              openQuiz(); 
+            } else if (target === 'details') {
+              setSelectedCareerData(data);
+              setCurrentScreen('career-details');
+            } else if (target === 'roadmap') {
+              setCurrentScreen('career-roadmap');
+            } else if (target === 'assessment-history') {
+              setCurrentScreen('assessment-history');
+            }
+          }}
+        />
+      )}
+
+      {currentScreen === 'career-details' && (
+        <CareerDetails
+          careerData={selectedCareerData}
+          onBack={() => setCurrentScreen('browse-careers')}
+          onNavigate={(target) => {
+            if (target === 'dashboard') {
+              const storedUser = JSON.parse(sessionStorage.getItem('user') || '{}');
+              setCurrentScreen(storedUser.role === 'admin' ? 'admin-dash' : 'student-dash');
+            } else if (target === 'browse') {
+              setCurrentScreen('browse-careers');
+            } else if (target === 'quiz') {
+              openQuiz();
+            } else if (target === 'profile') {
+              setCurrentScreen('profile');
+            } else if (target === 'roadmap') {
+              setCurrentScreen('career-roadmap');
+            } else if (target === 'assessment-history') {
+              setCurrentScreen('assessment-history');
+            }
+          }}
+          onLogout={handleLogout}
+        />
+      )}
+
+      {(currentScreen === 'profile' || currentScreen === 'settings' || currentScreen === 'admin-settings') && (
+        <UserProfile 
+          autoEdit={profileAutoEdit}
+          onNavigate={(target) => {
+            const storedUser = JSON.parse(sessionStorage.getItem('user') || '{}');
+            const isAdmin = storedUser.role === 'admin';
+            setProfileAutoEdit(false);
+            if (target === 'quiz' && !isAdmin) {
+              openQuiz();
+            } else if (target === 'dashboard') {
+              setCurrentScreen(isAdmin ? 'admin-dash' : 'student-dash');
+            } else if (isAdmin && target === 'results') {
+              setCurrentScreen('student-results');
+            } else if (isAdmin && ADMIN_VIEWS.includes(target)) {
+              setAdminInitialView(target);
+              setCurrentScreen('admin-dash');
+            } else if (target === 'browse') {
+              setCurrentScreen('browse-careers');
+            } else if (target === 'roadmap') {
+              setCurrentScreen('career-roadmap');
+            } else if (target === 'assessment-history') {
+              setCurrentScreen('assessment-history');
+            } else {
+              setCurrentScreen(target);
+            }
+          }}
+          onLogout={handleLogout}
+        />
+      )}
+
+      {currentScreen === 'quiz' && (
+        <CareerAssessment 
+          onNavigate={(target, answersData) => {
+            if (target === 'dashboard') {
+              setCurrentScreen('student-dash');
+            } else if (target === 'browse') {
+              setSelectedCareerId(null);
+              setCurrentScreen('browse-careers');
+            } else if (target === 'profile') {
+              setCurrentScreen('profile');
+            } else if (target === 'home') {
+              setCurrentScreen('home'); 
+            } else if (target === 'career-results') {
+              setQuizAnswers(answersData);
+              setCurrentScreen('career-results');
+            } else if (target === 'quiz') {
+              openQuiz();
+            } else if (target === 'roadmap') {
+              setCurrentScreen('career-roadmap');
+            } else if (target === 'assessment-history') {
+              setCurrentScreen('assessment-history');
+            } else {
+              setCurrentScreen('student-dash');
+            }
+          }}
+          onLogout={handleLogout}
+        />
+      )}
+
+      {currentScreen === 'career-results' && (
+        <CareerResults
+          answers={quizAnswers}
+          onNavigate={(target, data) => {
+            if (target === 'dashboard') {
+              setCurrentScreen('student-dash');
+            } else if (target === 'browse-careers' || target === 'browse') {
+              setCurrentScreen('browse-careers');
+            } else if (target === 'details' || target === 'career-details') {
+              setSelectedCareerData(data?.careerData || data);
+              setCurrentScreen('career-details');
+            } else if (target === 'profile') {
+              setCurrentScreen('profile');
+            } else if (target === 'quiz') {
+              openQuiz();
+            } else if (target === 'home') {
+              setCurrentScreen('home');
+            } else if (target === 'roadmap-detail') {
+              if (data && data.careerId) {
+                setSelectedCareerId(data.careerId);
+              }
+              setCurrentScreen('browse-careers');
+            } else if (target === 'roadmap') {
+              setCurrentScreen('career-roadmap');
+            } else if (target === 'assessment-history') {
+              setCurrentScreen('assessment-history');
+            }
+          }}
+          onLogout={handleLogout}
+        />
+      )}
+
+      {profileGate && (
+        <ProfileCompletionModal
+          completion={profileGate}
+          onClose={() => setProfileGate(null)}
+          onGoToProfile={() => {
+            setProfileGate(null);
+            setProfileAutoEdit(true);
+            setCurrentScreen('profile');
+          }}
+        />
+      )}
+
+    </div>
+  );
+}

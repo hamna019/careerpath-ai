@@ -1,0 +1,1367 @@
+[
+    {
+        "id": 1,
+        "weight": "High",
+        "category": "Interests & Passions",
+        "option_traits": {
+            "Building, repairing or assembling things with my hands": [
+                "R",
+                "trades",
+                "eng"
+            ],
+            "Solving puzzles, running experiments and figuring out how things work": [
+                "I",
+                "science",
+                "eng"
+            ],
+            "Drawing, designing, writing stories or making music": [
+                "A",
+                "design",
+                "arts",
+                "media"
+            ],
+            "Teaching, guiding or helping people through their problems": [
+                "S",
+                "edu",
+                "social",
+                "health"
+            ],
+            "Leading a team, pitching ideas or starting something of my own": [
+                "E",
+                "business"
+            ],
+            "Organizing information, keeping records and making plans run smoothly": [
+                "C",
+                "finance",
+                "business"
+            ],
+            "Coding, building apps or exploring new technology": [
+                "I",
+                "R",
+                "tech",
+                "data"
+            ],
+            "Being outdoors and working with nature, animals or the environment": [
+                "R",
+                "agri",
+                "env"
+            ]
+        }
+    },
+    {
+        "id": 2,
+        "weight": "High",
+        "category": "Interests & Passions",
+        "option_traits": {
+            "Mathematics & Statistics": [
+                "I",
+                "C",
+                "data",
+                "finance",
+                "eng",
+                "apt:numeric"
+            ],
+            "Physics & Chemistry": [
+                "I",
+                "R",
+                "eng",
+                "science"
+            ],
+            "Biology & Life Sciences": [
+                "I",
+                "health",
+                "science",
+                "agri"
+            ],
+            "Computer Science & IT": [
+                "I",
+                "tech",
+                "data",
+                "cyber"
+            ],
+            "Business, Accounting & Economics": [
+                "E",
+                "C",
+                "business",
+                "finance"
+            ],
+            "Languages, Literature & Communication": [
+                "A",
+                "S",
+                "media",
+                "edu"
+            ],
+            "Art, Design & Media Studies": [
+                "A",
+                "design",
+                "arts",
+                "media"
+            ],
+            "History, Law, Civics & Social Studies": [
+                "S",
+                "E",
+                "law",
+                "gov"
+            ],
+            "Psychology & Sociology": [
+                "S",
+                "I",
+                "social",
+                "health"
+            ],
+            "Physical Education & Sports Science": [
+                "R",
+                "S",
+                "sports"
+            ]
+        }
+    },
+    {
+        "id": 3,
+        "weight": "High",
+        "category": "Interests & Passions",
+        "option_traits": {
+            "Technology, Software & AI": [
+                "tech",
+                "data",
+                "cyber"
+            ],
+            "Healthcare & Medicine": [
+                "health"
+            ],
+            "Engineering, Construction & Manufacturing": [
+                "eng",
+                "trades"
+            ],
+            "Banking, Finance & Investment": [
+                "finance",
+                "business"
+            ],
+            "Media, Film & Entertainment": [
+                "media",
+                "arts"
+            ],
+            "Law, Government & Public Service": [
+                "law",
+                "gov"
+            ],
+            "Education & Scientific Research": [
+                "edu",
+                "science"
+            ],
+            "Hospitality, Food & Tourism": [
+                "hospitality"
+            ],
+            "Aviation, Shipping & Logistics": [
+                "transport"
+            ],
+            "Sports, Fitness & Wellness": [
+                "sports",
+                "health"
+            ]
+        }
+    },
+    {
+        "id": 4,
+        "weight": "Medium",
+        "category": "Interests & Passions",
+        "option_traits": {
+            "Tech reviews, gadgets and AI news": [
+                "tech",
+                "data"
+            ],
+            "Science, space and nature documentaries": [
+                "science",
+                "env",
+                "I"
+            ],
+            "Business news, startups and stock markets": [
+                "business",
+                "finance",
+                "E"
+            ],
+            "Design, fashion, photography or art": [
+                "design",
+                "arts",
+                "A"
+            ],
+            "Health, fitness and medical topics": [
+                "health",
+                "sports"
+            ],
+            "Politics, current affairs and social issues": [
+                "law",
+                "gov",
+                "social"
+            ],
+            "Movies, music, gaming or entertainment": [
+                "media",
+                "arts",
+                "tech"
+            ],
+            "Travel, food and different cultures": [
+                "hospitality",
+                "transport",
+                "gov"
+            ]
+        }
+    },
+    {
+        "id": 5,
+        "weight": "High",
+        "category": "Interests & Passions",
+        "option_traits": {
+            "Building a product or app used by millions of people": [
+                "tech",
+                "E",
+                "I"
+            ],
+            "Curing a patient or improving someone's health": [
+                "health",
+                "S",
+                "I"
+            ],
+            "Designing a building, machine or structure that lasts for decades": [
+                "eng",
+                "R",
+                "design"
+            ],
+            "Creating a film, design, book or brand that inspires people": [
+                "arts",
+                "media",
+                "design",
+                "A"
+            ],
+            "Growing a profitable business or making a smart investment": [
+                "business",
+                "finance",
+                "E"
+            ],
+            "Making society fairer through law, policy or social work": [
+                "law",
+                "gov",
+                "social",
+                "S"
+            ],
+            "Helping a student or team member grow because of me": [
+                "edu",
+                "S"
+            ],
+            "Making a scientific discovery that expands human knowledge": [
+                "science",
+                "I"
+            ]
+        }
+    },
+    {
+        "id": 6,
+        "weight": "High",
+        "category": "Skills & Aptitude",
+        "option_traits": {
+            "Working with numbers and calculating quickly": [
+                "apt:numeric",
+                "C",
+                "finance",
+                "data"
+            ],
+            "Logical reasoning and spotting patterns": [
+                "apt:logical",
+                "I",
+                "tech",
+                "data"
+            ],
+            "Writing clearly and expressing ideas in words": [
+                "apt:verbal",
+                "A",
+                "media",
+                "law"
+            ],
+            "Speaking confidently in front of people": [
+                "apt:speaking",
+                "E",
+                "business",
+                "edu"
+            ],
+            "Visualizing designs, layouts and colors": [
+                "apt:visual",
+                "A",
+                "design"
+            ],
+            "Using tools, machines and hands-on equipment": [
+                "apt:mechanical",
+                "R",
+                "trades",
+                "eng"
+            ],
+            "Understanding how people feel and what they need": [
+                "apt:empathy",
+                "S",
+                "social",
+                "health"
+            ],
+            "Remembering details and staying highly organized": [
+                "apt:detail",
+                "C",
+                "finance",
+                "health"
+            ]
+        }
+    },
+    {
+        "id": 7,
+        "weight": "Medium",
+        "category": "Skills & Aptitude",
+        "option_traits": {
+            "Break it into smaller steps and analyze each part logically": [
+                "apt:logical",
+                "I",
+                "tech",
+                "eng"
+            ],
+            "Research thoroughly and gather data before deciding": [
+                "I",
+                "data",
+                "science"
+            ],
+            "Brainstorm creative, unconventional solutions": [
+                "A",
+                "design",
+                "arts"
+            ],
+            "Talk it through with others and solve it together": [
+                "S",
+                "social",
+                "edu"
+            ],
+            "Try things practically and learn by trial and error": [
+                "R",
+                "trades",
+                "eng"
+            ],
+            "Follow proven methods, rules or checklists": [
+                "C",
+                "finance",
+                "transport",
+                "health"
+            ],
+            "Take charge, decide quickly and act": [
+                "E",
+                "business",
+                "defense"
+            ],
+            "Trust my intuition and past experience": [
+                "E",
+                "A",
+                "sports"
+            ]
+        }
+    },
+    {
+        "id": 8,
+        "weight": "High",
+        "category": "Skills & Aptitude",
+        "option_traits": {
+            "I build with it: coding, websites, apps or automation": [
+                "tech",
+                "I",
+                "apt:tech_high"
+            ],
+            "I am curious about AI, data science and cybersecurity": [
+                "data",
+                "cyber",
+                "tech",
+                "I"
+            ],
+            "I pick up new software quickly and enjoy exploring tools": [
+                "tech",
+                "design",
+                "apt:tech_mid"
+            ],
+            "I am comfortable with everyday tools like office apps and email": [
+                "C",
+                "business",
+                "apt:tech_basic"
+            ],
+            "I use technology only when I really need to": [
+                "apt:tech_low",
+                "S",
+                "R"
+            ],
+            "I prefer work with as few screens as possible": [
+                "apt:tech_low",
+                "R",
+                "sports",
+                "agri",
+                "trades"
+            ]
+        }
+    },
+    {
+        "id": 9,
+        "weight": "High",
+        "category": "Skills & Aptitude",
+        "option_traits": {
+            "Programming & software development": [
+                "tech",
+                "I"
+            ],
+            "Data analysis & spreadsheets": [
+                "data",
+                "finance",
+                "C"
+            ],
+            "Graphic design, video editing or animation": [
+                "design",
+                "media",
+                "A"
+            ],
+            "Public speaking, sales & persuasion": [
+                "business",
+                "law",
+                "E"
+            ],
+            "Writing, journalism or content creation": [
+                "media",
+                "A"
+            ],
+            "First aid, patient care or health support": [
+                "health",
+                "S"
+            ],
+            "Budgeting, accounting or financial planning": [
+                "finance",
+                "C"
+            ],
+            "Mechanical, electrical or technical repairs": [
+                "trades",
+                "eng",
+                "R"
+            ],
+            "Foreign languages & translation": [
+                "gov",
+                "hospitality",
+                "A",
+                "S"
+            ],
+            "Sports, fitness training or coaching": [
+                "sports",
+                "S",
+                "R"
+            ]
+        }
+    },
+    {
+        "id": 10,
+        "weight": "Medium",
+        "category": "Skills & Aptitude",
+        "option_traits": {
+            "I stay calm and think clearly in emergencies": [
+                "health",
+                "defense",
+                "transport",
+                "style:crisis"
+            ],
+            "I do my best work under tight deadlines and a fast pace": [
+                "business",
+                "media",
+                "E"
+            ],
+            "I prefer steady, predictable work with time to think": [
+                "C",
+                "I",
+                "science",
+                "finance"
+            ],
+            "I can make tough calls that affect people's lives or money": [
+                "health",
+                "law",
+                "finance",
+                "E"
+            ],
+            "I work best in a calm, supportive environment": [
+                "S",
+                "A",
+                "edu",
+                "design"
+            ],
+            "I am comfortable with physical risk and demanding conditions": [
+                "defense",
+                "sports",
+                "R",
+                "trades"
+            ]
+        }
+    },
+    {
+        "id": 11,
+        "weight": "High",
+        "category": "Personality & Work Style",
+        "option_traits": {
+            "I am curious and always asking \"why?\"": [
+                "I",
+                "science",
+                "data"
+            ],
+            "I am creative and full of new ideas": [
+                "A",
+                "design",
+                "arts"
+            ],
+            "I am caring and patient with others": [
+                "S",
+                "health",
+                "edu",
+                "social"
+            ],
+            "I am ambitious and competitive": [
+                "E",
+                "business",
+                "sports"
+            ],
+            "I am organized, careful and detail-oriented": [
+                "C",
+                "finance",
+                "data"
+            ],
+            "I am practical, hands-on and down-to-earth": [
+                "R",
+                "trades",
+                "eng"
+            ],
+            "I am adventurous and love new experiences": [
+                "R",
+                "E",
+                "transport",
+                "defense",
+                "hospitality"
+            ],
+            "I am calm, disciplined and reliable": [
+                "C",
+                "defense",
+                "transport",
+                "gov"
+            ]
+        }
+    },
+    {
+        "id": 12,
+        "weight": "Medium",
+        "category": "Personality & Work Style",
+        "option_traits": {
+            "Independently, with deep focus on my own tasks": [
+                "style:solo",
+                "I",
+                "tech",
+                "science"
+            ],
+            "In a small, close-knit team": [
+                "style:team",
+                "tech",
+                "design"
+            ],
+            "Leading and coordinating a group of people": [
+                "style:lead",
+                "E",
+                "business"
+            ],
+            "Meeting new people and clients throughout the day": [
+                "style:people",
+                "E",
+                "S",
+                "hospitality",
+                "business"
+            ],
+            "A balanced mix of solo and team work": [
+                "style:mixed"
+            ],
+            "Within a clear structure and chain of command": [
+                "style:structured",
+                "C",
+                "defense",
+                "gov",
+                "transport"
+            ]
+        }
+    },
+    {
+        "id": 13,
+        "weight": "Medium",
+        "category": "Personality & Work Style",
+        "option_traits": {
+            "The leader who sets direction and divides the work": [
+                "E",
+                "business",
+                "style:lead"
+            ],
+            "The researcher who digs into facts and details": [
+                "I",
+                "science",
+                "data"
+            ],
+            "The creative mind behind the ideas and visuals": [
+                "A",
+                "design",
+                "media"
+            ],
+            "The presenter who communicates with the audience": [
+                "E",
+                "A",
+                "media",
+                "law"
+            ],
+            "The organizer who tracks deadlines and tasks": [
+                "C",
+                "business",
+                "finance"
+            ],
+            "The builder who handles the technical work": [
+                "R",
+                "I",
+                "tech",
+                "eng"
+            ],
+            "The supporter who keeps the team motivated": [
+                "S",
+                "edu",
+                "social"
+            ],
+            "The reviewer who checks quality and catches mistakes": [
+                "C",
+                "I",
+                "finance",
+                "health"
+            ]
+        }
+    },
+    {
+        "id": 14,
+        "weight": "Medium",
+        "category": "Personality & Work Style",
+        "option_traits": {
+            "Based on facts, data and logic": [
+                "I",
+                "data",
+                "finance",
+                "eng"
+            ],
+            "Based on my values and how it affects people": [
+                "S",
+                "social",
+                "health",
+                "edu"
+            ],
+            "Based on intuition and gut feeling": [
+                "A",
+                "arts",
+                "E"
+            ],
+            "After talking it over with people I trust": [
+                "S"
+            ],
+            "Quickly and confidently, I trust myself": [
+                "E",
+                "business",
+                "defense",
+                "sports"
+            ],
+            "Carefully, weighing every risk before I act": [
+                "C",
+                "finance",
+                "law"
+            ]
+        }
+    },
+    {
+        "id": 15,
+        "weight": "High",
+        "category": "Personality & Work Style",
+        "option_traits": {
+            "Solving a challenging problem": [
+                "I",
+                "tech",
+                "eng",
+                "science"
+            ],
+            "Helping someone who needed it": [
+                "S",
+                "health",
+                "social",
+                "edu"
+            ],
+            "Creating something new and original": [
+                "A",
+                "design",
+                "arts",
+                "media"
+            ],
+            "Hitting a target or closing a deal": [
+                "E",
+                "business",
+                "finance"
+            ],
+            "Finishing every task accurately and on time": [
+                "C",
+                "finance",
+                "gov"
+            ],
+            "Doing something physically active or adventurous": [
+                "R",
+                "sports",
+                "defense",
+                "agri"
+            ]
+        }
+    },
+    {
+        "id": 16,
+        "weight": "High",
+        "category": "Work Environment & Values",
+        "option_traits": {
+            "A modern corporate office": [
+                "env:office",
+                "business",
+                "finance",
+                "C"
+            ],
+            "Remotely, from home or anywhere": [
+                "env:remote",
+                "tech",
+                "design",
+                "media"
+            ],
+            "A hospital, clinic or healthcare facility": [
+                "env:hospital",
+                "health"
+            ],
+            "A laboratory or research center": [
+                "env:lab",
+                "science",
+                "I"
+            ],
+            "Outdoors: sites, fields or nature": [
+                "env:outdoor",
+                "agri",
+                "env",
+                "eng",
+                "R"
+            ],
+            "A creative studio, film set or stage": [
+                "env:studio",
+                "arts",
+                "media",
+                "design"
+            ],
+            "A classroom or university campus": [
+                "env:campus",
+                "edu"
+            ],
+            "On the move: airports, ships and new cities": [
+                "env:travel",
+                "transport",
+                "hospitality",
+                "gov"
+            ],
+            "A workshop, factory or industrial plant": [
+                "env:plant",
+                "trades",
+                "eng",
+                "R"
+            ],
+            "A courtroom, government office or embassy": [
+                "env:govt",
+                "law",
+                "gov"
+            ]
+        }
+    },
+    {
+        "id": 17,
+        "weight": "High",
+        "category": "Work Environment & Values",
+        "option_traits": {
+            "High salary and financial growth": [
+                "value:income",
+                "finance",
+                "business",
+                "tech"
+            ],
+            "Job security and stability": [
+                "value:security",
+                "gov",
+                "health",
+                "C"
+            ],
+            "Making a positive impact on society": [
+                "value:impact",
+                "social",
+                "health",
+                "edu",
+                "S"
+            ],
+            "Creative freedom and self-expression": [
+                "value:creativity",
+                "arts",
+                "design",
+                "A"
+            ],
+            "Recognition, status and respect": [
+                "value:status",
+                "law",
+                "health",
+                "E"
+            ],
+            "Work-life balance and flexibility": [
+                "value:balance",
+                "tech",
+                "edu"
+            ],
+            "Continuous learning and intellectual challenge": [
+                "value:learning",
+                "science",
+                "I",
+                "data"
+            ],
+            "Independence and being my own boss": [
+                "value:independence",
+                "business",
+                "E",
+                "media"
+            ]
+        }
+    },
+    {
+        "id": 18,
+        "weight": "Low",
+        "category": "Work Environment & Values",
+        "option_traits": {
+            "A standard, predictable 9-to-5": [
+                "C",
+                "business",
+                "finance",
+                "gov"
+            ],
+            "Flexible hours that I set myself": [
+                "tech",
+                "media",
+                "design",
+                "E"
+            ],
+            "Night or weekend shifts are fine if the work matters": [
+                "health",
+                "defense",
+                "hospitality"
+            ],
+            "Intense project bursts followed by breaks": [
+                "arts",
+                "media",
+                "eng"
+            ],
+            "Long hours are fine if the rewards are high": [
+                "finance",
+                "law",
+                "business",
+                "E"
+            ],
+            "Rotations, seasons or travel-based schedules": [
+                "transport",
+                "agri",
+                "sports"
+            ]
+        }
+    },
+    {
+        "id": 19,
+        "weight": "Medium",
+        "category": "Work Environment & Values",
+        "option_traits": {
+            "Active, on my feet most of the day": [
+                "R",
+                "sports",
+                "hospitality",
+                "health"
+            ],
+            "A mix of movement and desk work": [
+                "eng",
+                "edu",
+                "science"
+            ],
+            "Mostly desk-based": [
+                "C",
+                "tech",
+                "finance",
+                "data"
+            ],
+            "Physically demanding work excites me": [
+                "R",
+                "sports",
+                "defense",
+                "trades"
+            ],
+            "Precise, detailed work with my hands": [
+                "R",
+                "health",
+                "trades",
+                "design"
+            ],
+            "Working with animals, plants or the land": [
+                "R",
+                "agri",
+                "env"
+            ]
+        }
+    },
+    {
+        "id": 20,
+        "weight": "High",
+        "category": "Work Environment & Values",
+        "option_traits": {
+            "Improving health and saving lives": [
+                "health",
+                "S"
+            ],
+            "Driving innovation and new technology": [
+                "tech",
+                "eng",
+                "I"
+            ],
+            "Protecting people, communities and the country": [
+                "defense",
+                "gov",
+                "S"
+            ],
+            "Educating and empowering the next generation": [
+                "edu",
+                "S"
+            ],
+            "Growing businesses and the economy": [
+                "business",
+                "finance",
+                "E"
+            ],
+            "Protecting the environment and building a sustainable future": [
+                "env",
+                "agri",
+                "science"
+            ],
+            "Inspiring and entertaining people through art and media": [
+                "arts",
+                "media",
+                "A"
+            ],
+            "Promoting justice, rights and fairness": [
+                "law",
+                "social",
+                "gov"
+            ]
+        }
+    },
+    {
+        "id": 21,
+        "weight": "Low",
+        "category": "Education & Learning",
+        "option_traits": {
+            "Matric \/ O-Levels or equivalent": [
+                "edu:secondary"
+            ],
+            "Intermediate \/ A-Levels or equivalent": [
+                "edu:higher_secondary"
+            ],
+            "Currently pursuing a Bachelor's degree": [
+                "edu:undergrad"
+            ],
+            "Bachelor's degree completed": [
+                "edu:graduate"
+            ],
+            "Master's degree or higher": [
+                "edu:postgrad"
+            ],
+            "Diploma or technical \/ vocational certificate": [
+                "edu:vocational",
+                "trades"
+            ]
+        }
+    },
+    {
+        "id": 22,
+        "weight": "High",
+        "category": "Education & Learning",
+        "option_traits": {
+            "Pre-Medical (Biology, Chemistry, Physics)": [
+                "stream:premed",
+                "health",
+                "science"
+            ],
+            "Pre-Engineering (Mathematics, Physics, Chemistry)": [
+                "stream:preeng",
+                "eng",
+                "science"
+            ],
+            "Computer Science \/ ICS": [
+                "stream:cs",
+                "tech",
+                "data"
+            ],
+            "Commerce \/ Business (I.Com, Accounting)": [
+                "stream:commerce",
+                "business",
+                "finance"
+            ],
+            "Humanities \/ Arts": [
+                "stream:arts",
+                "law",
+                "media",
+                "social",
+                "arts"
+            ],
+            "General Science": [
+                "stream:gsci",
+                "science",
+                "data"
+            ],
+            "Technical \/ Vocational (DAE or similar)": [
+                "stream:tech",
+                "trades",
+                "eng"
+            ],
+            "Other, or not decided yet": [
+                "stream:other"
+            ]
+        }
+    },
+    {
+        "id": 23,
+        "weight": "Medium",
+        "category": "Education & Learning",
+        "option_traits": {
+            "Outstanding: top of my class (A+ \/ 90%+)": [
+                "grade:4"
+            ],
+            "Strong (A \/ 80-89%)": [
+                "grade:3"
+            ],
+            "Good (B \/ 70-79%)": [
+                "grade:2"
+            ],
+            "Average (C \/ 60-69%)": [
+                "grade:1"
+            ],
+            "My grades are modest, but I shine in practical skills": [
+                "grade:1",
+                "R",
+                "trades",
+                "sports"
+            ],
+            "I learn better outside the classroom": [
+                "grade:1",
+                "E",
+                "A"
+            ]
+        }
+    },
+    {
+        "id": 24,
+        "weight": "High",
+        "category": "Education & Learning",
+        "option_traits": {
+            "Under a year, I want to start working soon": [
+                "edu:short",
+                "trades",
+                "hospitality",
+                "media"
+            ],
+            "A diploma or certification (1-2 years)": [
+                "edu:diploma",
+                "trades",
+                "health",
+                "tech"
+            ],
+            "A Bachelor's degree (4 years)": [
+                "edu:bachelor",
+                "tech",
+                "business",
+                "eng"
+            ],
+            "A Master's or specialized postgraduate study (5-6 years)": [
+                "edu:master",
+                "data",
+                "science",
+                "finance"
+            ],
+            "As long as it takes: MBBS, PhD or law (7+ years)": [
+                "edu:long",
+                "health",
+                "science",
+                "law"
+            ],
+            "I will mostly teach myself through courses and practice": [
+                "edu:self",
+                "tech",
+                "design",
+                "media"
+            ]
+        }
+    },
+    {
+        "id": 25,
+        "weight": "Low",
+        "category": "Education & Learning",
+        "option_traits": {
+            "Reading, research and theory": [
+                "I",
+                "science",
+                "law"
+            ],
+            "Hands-on practice and experiments": [
+                "R",
+                "eng",
+                "trades",
+                "health"
+            ],
+            "Videos and visual demonstrations": [
+                "A",
+                "design",
+                "media"
+            ],
+            "Group discussions and teaching others": [
+                "S",
+                "edu"
+            ],
+            "Real-world projects and internships": [
+                "E",
+                "business",
+                "tech"
+            ],
+            "Self-paced online courses and tutorials": [
+                "tech",
+                "data",
+                "design"
+            ]
+        }
+    },
+    {
+        "id": 26,
+        "weight": "High",
+        "category": "Career Goals & Aspirations",
+        "option_traits": {
+            "A recognized expert or specialist in my field": [
+                "I",
+                "health",
+                "science",
+                "tech"
+            ],
+            "A senior leader or executive": [
+                "E",
+                "business",
+                "finance"
+            ],
+            "Running my own business or startup": [
+                "E",
+                "business",
+                "risk:high"
+            ],
+            "A creative professional with my own portfolio and style": [
+                "A",
+                "arts",
+                "design",
+                "media"
+            ],
+            "Serving the public in government, defense or civil services": [
+                "gov",
+                "defense",
+                "law"
+            ],
+            "A researcher or professor creating new knowledge": [
+                "I",
+                "science",
+                "edu"
+            ],
+            "Working internationally and traveling the world": [
+                "transport",
+                "gov",
+                "hospitality"
+            ],
+            "In a stable, respected career with a balanced life": [
+                "C",
+                "value:balance",
+                "value:security"
+            ]
+        }
+    },
+    {
+        "id": 27,
+        "weight": "High",
+        "category": "Career Goals & Aspirations",
+        "option_traits": {
+            "Software, IT & Artificial Intelligence": [
+                "tech",
+                "data",
+                "cyber"
+            ],
+            "Medicine & Healthcare": [
+                "health"
+            ],
+            "Engineering": [
+                "eng"
+            ],
+            "Business, Management & Entrepreneurship": [
+                "business"
+            ],
+            "Finance, Accounting & Banking": [
+                "finance"
+            ],
+            "Law, Civil Services & Diplomacy": [
+                "law",
+                "gov"
+            ],
+            "Design, Fine Arts & Media": [
+                "design",
+                "arts",
+                "media"
+            ],
+            "Teaching, Research & Sciences": [
+                "edu",
+                "science"
+            ],
+            "Armed Forces, Aviation & Emergency Services": [
+                "defense",
+                "transport"
+            ],
+            "Hospitality, Culinary Arts & Tourism": [
+                "hospitality"
+            ],
+            "Sports, Fitness & Coaching": [
+                "sports"
+            ],
+            "Skilled Trades & Technical Work": [
+                "trades"
+            ]
+        }
+    },
+    {
+        "id": 28,
+        "weight": "Medium",
+        "category": "Career Goals & Aspirations",
+        "option_traits": {
+            "I prefer a stable, salaried job": [
+                "risk:low",
+                "C",
+                "gov"
+            ],
+            "Moderate risk is fine if it brings growth": [
+                "risk:mid"
+            ],
+            "High risk, high reward: startups, investing or freelancing": [
+                "risk:high",
+                "E",
+                "business",
+                "finance"
+            ],
+            "I will compete in tough fields where only a few make it": [
+                "risk:high",
+                "arts",
+                "sports",
+                "media"
+            ],
+            "I would accept personal danger for a greater cause": [
+                "risk:physical",
+                "defense",
+                "health"
+            ]
+        }
+    },
+    {
+        "id": 29,
+        "weight": "Medium",
+        "category": "Career Goals & Aspirations",
+        "option_traits": {
+            "Caring for patients or clients one-on-one": [
+                "S",
+                "health",
+                "social"
+            ],
+            "Teaching, mentoring or training others": [
+                "S",
+                "edu",
+                "sports"
+            ],
+            "Selling, negotiating and persuading": [
+                "E",
+                "business",
+                "law"
+            ],
+            "Collaborating with technical teams": [
+                "I",
+                "tech",
+                "eng",
+                "data"
+            ],
+            "Performing or presenting to audiences": [
+                "A",
+                "E",
+                "arts",
+                "media"
+            ],
+            "Minimal interaction, focusing on my own work": [
+                "I",
+                "C",
+                "data",
+                "science"
+            ],
+            "Serving and assisting customers or guests": [
+                "S",
+                "hospitality"
+            ],
+            "Advocating for and counseling people in need": [
+                "S",
+                "social",
+                "law"
+            ]
+        }
+    },
+    {
+        "id": 30,
+        "weight": "Medium",
+        "category": "Career Goals & Aspirations",
+        "option_traits": {
+            "Artificial Intelligence & Robotics": [
+                "tech",
+                "data",
+                "eng"
+            ],
+            "Space Exploration & Aviation": [
+                "eng",
+                "science",
+                "transport"
+            ],
+            "Renewable Energy & Climate Action": [
+                "env",
+                "eng",
+                "agri"
+            ],
+            "Healthcare Innovation & Biotechnology": [
+                "health",
+                "science"
+            ],
+            "Digital Media & the Creator Economy": [
+                "media",
+                "arts",
+                "design"
+            ],
+            "Fintech, Crypto & Global Markets": [
+                "finance",
+                "tech",
+                "business"
+            ],
+            "Smart Cities & Modern Infrastructure": [
+                "eng",
+                "gov",
+                "design"
+            ],
+            "Cybersecurity & Digital Privacy": [
+                "cyber",
+                "tech",
+                "defense"
+            ]
+        }
+    }
+]

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -n \"avatarUrl\\\\|127.0.0.1:8000/storage\" \"/home/hamza/Downloads/careerpath-ai \\(Frontend\\)/src/components/SystemSettings.jsx\")",
+      "Read(//home/hamza/Downloads/careerpath-ai \\\\\\(Frontend\\\\\\)/src/components/**)",
+      "Bash(php -l app/Http/Controllers/AdminProfileController.php)",
+      "Bash(php -l app/Models/User.php)",
+      "Bash(php artisan *)",
+      "Bash(cd \"/home/hamza/Downloads/careerpath-ai \\(Frontend\\)\" && grep -rln \"role.*admin\\\\|admin.*login\\\\|AdminLogin\" src --include=*.jsx | grep -v node_modules)",
+      "Read(//home/hamza/Downloads/careerpath-ai \\\\\\(Frontend\\\\\\)/**)"
+    ]
+  }
+}
