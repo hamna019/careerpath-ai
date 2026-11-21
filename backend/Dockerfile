@@ -1,6 +1,6 @@
 FROM php:8.2-cli-alpine
 
-# Install system dependencies & PHP extensions required by Laravel 11
+# Install system dependencies & PHP extensions (including SQLite & MySQL)
 RUN apk add --no-cache \
     git \
     curl \
@@ -8,27 +8,39 @@ RUN apk add --no-cache \
     libxml2-dev \
     zip \
     unzip \
+    sqlite \
+    sqlite-dev \
     linux-headers \
     libzip-dev \
     oniguruma-dev \
-    && docker-php-ext-install pdo pdo_mysql bcmath mbstring zip opcache
+    && docker-php-ext-install pdo pdo_sqlite pdo_mysql bcmath mbstring zip opcache
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Set working directory
 WORKDIR /app
 
-# Copy codebase
+# Copy backend source files
 COPY . .
 
 # Install production PHP dependencies
 RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
 
-# Set permissions for Laravel storage & cache
-RUN chmod -R 777 storage bootstrap/cache
+# Setup environment & SQLite database
+RUN if [ -f .env.example ]; then cp .env.example .env; else touch .env; fi && \
+    echo "APP_ENV=production" >> .env && \
+    echo "APP_DEBUG=false" >> .env && \
+    echo "DB_CONNECTION=sqlite" >> .env && \
+    echo "DB_DATABASE=/app/database/database.sqlite" >> .env && \
+    echo "ML_SERVICE_URL=https://hamna911-careerpath-ml.hf.space" >> .env && \
+    mkdir -p database && \
+    touch database/database.sqlite && \
+    php artisan key:generate --force
 
-EXPOSE 8000
+# Set directory permissions for Laravel
+RUN chmod -R 777 storage bootstrap/cache database
 
-# Run Laravel on the dynamic port assigned by the cloud platform
-CMD sh -c "php artisan config:clear && php artisan serve --host=0.0.0.0 --port=\${PORT:-8000}"
+EXPOSE 7860
+
+# Run migrations & serve on Hugging Face default port 7860
+CMD sh -c "php artisan config:clear && php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=7860"
