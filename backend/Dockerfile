@@ -20,8 +20,13 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
 
-# Copy backend source files
+# Copy files if uploaded directly, otherwise auto-clone from GitHub
 COPY . .
+RUN if [ ! -f artisan ]; then \
+        git clone https://github.com/hamna019/careerpath-ai.git /tmp/repo && \
+        cp -r /tmp/repo/backend/* /app/ && \
+        rm -rf /tmp/repo; \
+    fi
 
 # Install production PHP dependencies
 RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
