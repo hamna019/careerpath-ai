@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { User, LogOut, Bell, Briefcase, ClipboardList, BellOff, Menu, ChevronDown, Award } from 'lucide-react';
+import { User, LogOut, Bell, Briefcase, ClipboardList, BellOff, Menu, ChevronDown, Award, Sparkles } from 'lucide-react';
 import axios from 'axios';
 
 const STUDENT_NOTIFICATION_STYLE = {
@@ -307,13 +307,14 @@ export default function Header({ onNavigate, onLogout, currentView = 'dashboard'
           onClick={handleDashboardClick}
           title="Go to Dashboard"
           aria-label="Eluci - Go to Dashboard"
-          className="flex items-center select-none cursor-pointer my-auto transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-[#bd24df]/40 rounded-xl bg-transparent border-0 p-0"
+          className="flex items-center gap-2.5 select-none cursor-pointer my-auto transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] outline-none rounded-xl bg-transparent border-0 p-0"
         >
-          <img
-            src="/logoo.png"
-            alt="Eluci Logo"
-            className="h-11 xs:h-12 sm:h-16 w-auto object-contain hd-clear-logo"
-          />
+          <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-[#bd24df] via-[#d946ef] to-[#f08fe7] flex items-center justify-center shadow-[0_0_12px_rgba(217,70,239,0.4)] border border-fuchsia-300/30">
+            <Sparkles className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
+          </div>
+          <span className="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900 font-poppins">
+            Elu<span className="text-[#bd24df]">ci</span>
+          </span>
         </button>
 
         <nav className="hidden lg:flex flex-1 items-center justify-center px-4 min-w-0" aria-label="Primary">

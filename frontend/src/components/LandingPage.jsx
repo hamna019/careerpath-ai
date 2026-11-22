@@ -1,4 +1,4 @@
-import { LogIn, Mail, MapPin, Phone, Lock, Target, ClipboardCheck, Route, CheckCircle2 } from 'lucide-react';
+import { LogIn, Mail, MapPin, Phone, Lock, Target, ClipboardCheck, Route, CheckCircle2, Sparkles } from 'lucide-react';
 import HomeImage from '../assets/Home.webp';
 
 export default function LandingPage({ onNavigate }) {
@@ -67,12 +67,13 @@ export default function LandingPage({ onNavigate }) {
         <div className="absolute bottom-[5%] right-[-5%] w-[40%] h-[40%] bg-fuchsia-500/15 blur-[150px] rounded-full pointer-events-none z-10"></div>
 
         <header className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-3 flex items-center justify-between relative z-30">
-          <div className="flex items-center select-none cursor-pointer" onClick={() => scrollToSection('home')}>
-            <img
-              src="/logoo.png"
-              alt="Eluci Logo"
-              className="-ml-[11px] sm:-ml-[15px] lg:-ml-[18px] h-[72px] sm:h-[92px] lg:h-[112px] w-auto object-contain brightness-0 invert transition-transform hover:scale-105 drop-shadow-[0_2px_18px_rgba(255,255,255,0.45)]"
-            />
+          <div className="flex items-center gap-3 select-none cursor-pointer" onClick={() => scrollToSection('home')}>
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-[#bd24df] via-[#d946ef] to-[#f08fe7] flex items-center justify-center shadow-[0_0_22px_rgba(217,70,239,0.55)] border border-white/20 transition-transform duration-300 hover:scale-105">
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+            </div>
+            <span className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white font-poppins">
+              Elu<span className="text-[#f08fe7]">ci</span>
+            </span>
           </div>
 
           <div className="flex items-center gap-8 lg:gap-12">
@@ -131,7 +132,7 @@ export default function LandingPage({ onNavigate }) {
                   onClick={() => onNavigate('login')}
                   className="w-full sm:w-auto sm:min-w-[300px] h-[75px] px-8 py-4 rounded-full bg-[#f08fe7] hover:bg-[#fa9eed] text-[#5B0055] text-[21px] font-semibold tracking-wide whitespace-nowrap transition-all duration-300 shadow-[0_4px_25px_rgba(217,70,239,0.4)] hover:shadow-[0_6px_30px_rgba(217,70,239,0.75)] cursor-pointer hover:scale-[1.01]"
                 >
-                  Find My Career Path
+                  Discover Your Path with Eluci
                 </button>
               </div>
 
@@ -328,11 +329,14 @@ export default function LandingPage({ onNavigate }) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start justify-between">
           
           <div className="md:col-span-5 space-y-5">
-            <img
-              src="/logoo.png"
-              alt="Eluci Logo"
-              className="-ml-[10px] sm:-ml-[13px] h-16 sm:h-20 w-auto object-contain select-none brightness-0 invert"
-            />
+            <div className="flex items-center gap-3 select-none cursor-pointer" onClick={() => scrollToSection('home')}>
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#bd24df] via-[#d946ef] to-[#f08fe7] flex items-center justify-center shadow-[0_0_20px_rgba(217,70,239,0.45)] border border-white/20">
+                <Sparkles className="w-5 h-5 text-white" />
+              </div>
+              <span className="text-3xl font-extrabold tracking-tight text-white font-poppins">
+                Elu<span className="text-[#f08fe7]">ci</span>
+              </span>
+            </div>
             <p className="text-gray-300 text-base leading-relaxed max-w-md font-medium">
               Your personal co-pilot for professional growth, powered by advanced AI guidance and cutting-edge career pathways.
             </p>
