@@ -70,7 +70,7 @@ export default function LandingPage({ onNavigate }) {
           <div className="flex items-center select-none cursor-pointer" onClick={() => scrollToSection('home')}>
             <img
               src="/logoo.png"
-              alt="CareerPath AI Logo"
+              alt="Eluci Logo"
               className="-ml-[11px] sm:-ml-[15px] lg:-ml-[18px] h-[72px] sm:h-[92px] lg:h-[112px] w-auto object-contain brightness-0 invert transition-transform hover:scale-105 drop-shadow-[0_2px_18px_rgba(255,255,255,0.45)]"
             />
           </div>
@@ -189,7 +189,7 @@ export default function LandingPage({ onNavigate }) {
             <div className="lg:col-span-7 space-y-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">About Us</h2>
               <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-                CareerPath AI is built to take the guesswork out of professional growth and bridge the gap between where you are and where you want to be. Instead of navigating blind career moves, we analyze real-time market demands and match them directly with your personal strengths to create a clear, execution-ready roadmap. Whether you are a student starting out, a professional planning a transition, or an expert targeting leadership, our platform delivers precise guidance, eliminating confusion and turning ambition into actual career achievement.
+                Eluci is built to take the guesswork out of professional growth and bridge the gap between where you are and where you want to be. Instead of navigating blind career moves, we analyze real-time market demands and match them directly with your personal strengths to create a clear, execution-ready roadmap. Whether you are a student starting out, a professional planning a transition, or an expert targeting leadership, our platform delivers precise guidance, eliminating confusion and turning ambition into actual career achievement.
               </p>
             </div>
             
@@ -330,7 +330,7 @@ export default function LandingPage({ onNavigate }) {
           <div className="md:col-span-5 space-y-5">
             <img
               src="/logoo.png"
-              alt="CareerPath AI Logo"
+              alt="Eluci Logo"
               className="-ml-[10px] sm:-ml-[13px] h-16 sm:h-20 w-auto object-contain select-none brightness-0 invert"
             />
             <p className="text-gray-300 text-base leading-relaxed max-w-md font-medium">
@@ -352,7 +352,7 @@ export default function LandingPage({ onNavigate }) {
             <h4 className="text-white font-extrabold text-lg tracking-wide">Get in Touch</h4>
             <div className="flex items-center gap-3 text-gray-300 text-base font-medium">
               <Mail size={20} className="text-[#f08fe7]" />
-              <span>support@careerpathaicareers.com</span>
+              <span>support@eluci.com</span>
             </div>
             <div className="flex items-center gap-3 text-gray-300 text-base font-medium">
               <Phone size={20} className="text-[#f08fe7]" />
@@ -368,7 +368,7 @@ export default function LandingPage({ onNavigate }) {
 
         <div className="pt-8 border-t border-white/10 text-center">
           <p className="text-sm font-medium text-gray-400 tracking-wide">
-            &copy; 2026 CareerPath AI. All rights reserved.
+            &copy; 2026 Eluci. All rights reserved.
           </p>
         </div>
       </footer>

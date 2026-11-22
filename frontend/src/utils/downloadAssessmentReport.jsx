@@ -81,7 +81,7 @@ export async function downloadAssessmentReport(report, studentName) {
       pdf.addImage(image, 'JPEG', (pageW - w) / 2, 0, w, h, undefined, 'FAST');
     }
 
-    pdf.save(`CareerPath-AI-Assessment-${report.number}-Report.pdf`);
+    pdf.save(`Eluci-Assessment-${report.number}-Report.pdf`);
   } finally {
     root.unmount();
     host.remove();

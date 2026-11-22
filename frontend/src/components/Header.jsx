@@ -26,7 +26,7 @@ const buildStudentNotifications = (items) =>
 
 const ADMIN_ACTIVITY_COPY = {
   'New Student': {
-    title: (name) => `${name} joined CareerPath`,
+    title: (name) => `${name} joined Eluci`,
     text: () => 'New student registration',
   },
   'In Progress': {
@@ -306,12 +306,12 @@ export default function Header({ onNavigate, onLogout, currentView = 'dashboard'
           type="button"
           onClick={handleDashboardClick}
           title="Go to Dashboard"
-          aria-label="CareerPath AI - Go to Dashboard"
+          aria-label="Eluci - Go to Dashboard"
           className="flex items-center select-none cursor-pointer my-auto transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] outline-none focus-visible:ring-2 focus-visible:ring-[#bd24df]/40 rounded-xl bg-transparent border-0 p-0"
         >
           <img
             src="/logoo.png"
-            alt="CareerPath AI Logo"
+            alt="Eluci Logo"
             className="h-11 xs:h-12 sm:h-16 w-auto object-contain hd-clear-logo"
           />
         </button>

@@ -651,7 +651,7 @@ export default function TotalStudents() {
         <div className="student-print-area px-14 py-12 text-left font-['Inter',sans-serif]">
           <div className="print-avoid flex items-center justify-between pb-6 border-b border-[#FFD2F7]">
             <div className="flex items-center">
-              <img src="/logoo.png" alt="CareerPathAI" className="h-14 w-auto object-contain" />
+              <img src="/logoo.png" alt="Eluci" className="h-14 w-auto object-contain" />
             </div>
             <div className="text-right text-[13px] text-gray-500 font-medium">
               <div>{new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
@@ -737,12 +737,12 @@ export default function TotalStudents() {
           </div>
 
           <div className="print-avoid pt-8 mt-10 border-t border-gray-200 flex items-center justify-between">
-            <p className="text-[11px] text-gray-400 mb-8">© {new Date().getFullYear()} CareerPathAI. All rights reserved.</p>
+            <p className="text-[11px] text-gray-400 mb-8">© {new Date().getFullYear()} Eluci. All rights reserved.</p>
             <div className="text-center">
               <div className="flex justify-center -mb-2"><Signature width={180} /></div>
               <div className="w-[200px] border-b border-gray-400 mb-1.5 mx-auto"></div>
               <p className="text-[13px] font-semibold text-gray-700">Authorized Signature</p>
-              <p className="text-[12px] text-gray-400">CareerPath AI Team</p>
+              <p className="text-[12px] text-gray-400">Eluci Team</p>
             </div>
           </div>
         </div>,

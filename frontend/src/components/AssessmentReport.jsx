@@ -13,13 +13,13 @@ function SignOff({ report }) {
         <div>Issue Date: <span className="text-gray-800">{report.issuedAt || formatIssueDate()}</span></div>
         <div>Certificate ID: <span className="text-gray-800">{report.certificateId}</span></div>
         <div>Assessment: <span className="text-gray-800">#{report.number}</span></div>
-        <div>Certified As: <span className="text-gray-800">CareerPath AI Team</span></div>
+        <div>Certified As: <span className="text-gray-800">Eluci Team</span></div>
       </div>
       <div className="text-center">
         <div className="flex justify-center -mb-2"><Signature /></div>
         <div className="w-[230px] border-b border-gray-400 mb-1.5 mx-auto"></div>
         <p className="text-[14px] font-semibold text-gray-700">Authorized Signature</p>
-        <p className="text-[13px] text-gray-400">CareerPath AI Team</p>
+        <p className="text-[13px] text-gray-400">Eluci Team</p>
       </div>
     </div>
   );
@@ -33,7 +33,7 @@ function ReportPage({ report, studentName, pageNumber, totalPages, children }) {
       style={{ width: PAGE_WIDTH, minHeight: PAGE_HEIGHT, fontFamily: "'Inter', sans-serif" }}
     >
       <div className="flex items-center justify-between pb-6 mb-8 border-b border-[#FFD2F7]">
-        <img src="/logoo.png" alt="CareerPath AI" className="h-14 w-auto object-contain" />
+        <img src="/logoo.png" alt="Eluci" className="h-14 w-auto object-contain" />
         <div className="text-right">
           <div className="text-[17px] font-semibold text-gray-900">Assessment #{report.number} Report</div>
           <div className="text-[14px] text-gray-500 font-light">{studentName} · {report.date} at {report.time}</div>
@@ -45,7 +45,7 @@ function ReportPage({ report, studentName, pageNumber, totalPages, children }) {
       {pageNumber === totalPages && <SignOff report={report} />}
 
       <div className="flex items-center justify-between pt-5 mt-10 border-t border-[#FFD2F7] text-[13px] text-gray-500">
-        <span>CareerPath AI · Smart Counselling For Your Future</span>
+        <span>Eluci · Smart Counselling For Your Future</span>
         <span>Page {pageNumber} of {totalPages}</span>
       </div>
     </div>

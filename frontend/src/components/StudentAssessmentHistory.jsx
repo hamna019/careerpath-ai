@@ -598,7 +598,7 @@ export default function StudentAssessmentHistory({ onNavigate, onLogout }) {
               <div className="w-full h-full border-[10px] border-[#890080] rounded-[6px] flex items-center justify-center p-3">
                 <div className="w-full h-full border-[1.5px] border-[#F45EE4] rounded-[4px] flex flex-col items-center justify-between text-center font-['Inter',sans-serif] px-20 py-12">
 
-                  <img src="/logoo.png" alt="CareerPathAI" className="h-24 w-auto object-contain" />
+                  <img src="/logoo.png" alt="Eluci" className="h-24 w-auto object-contain" />
 
                   <div className="space-y-4 max-w-3xl">
                     <p className="text-[16px] font-bold uppercase tracking-[6px] text-[#bd24df]">This certifies that</p>
@@ -618,18 +618,18 @@ export default function StudentAssessmentHistory({ onNavigate, onLogout }) {
                     <div className="text-left text-[14px] text-gray-500 font-medium leading-relaxed">
                       <div>Issue Date: <span className="text-gray-800">{certificateAttempt.issuedAt}</span></div>
                       <div>Certificate ID: <span className="text-gray-800">{cert.certificateId}</span></div>
-                      <div>Certified As: <span className="text-gray-800">CareerPath AI Team</span></div>
+                      <div>Certified As: <span className="text-gray-800">Eluci Team</span></div>
                     </div>
 
                     <div className="text-center">
                       <div className="flex justify-center -mb-2"><Signature width={220} /></div>
                       <div className="w-[240px] border-b border-gray-400 mb-1.5 mx-auto"></div>
                       <p className="text-[15px] font-semibold text-gray-700">Authorized Signature</p>
-                      <p className="text-[13px] text-gray-400">CareerPath AI Team</p>
+                      <p className="text-[13px] text-gray-400">Eluci Team</p>
                     </div>
 
                     <div className="flex flex-col items-center gap-1.5">
-                      <img src="/Certificate_Sticker.png" alt="CareerPath AI Certified" className="h-[120px] w-auto object-contain" />
+                      <img src="/Certificate_Sticker.png" alt="Eluci Certified" className="h-[120px] w-auto object-contain" />
                     </div>
                   </div>
 

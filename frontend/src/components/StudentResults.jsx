@@ -267,7 +267,7 @@ export default function StudentResults({ onNavigate, onLogout }) {
 
   const handleSendEmail = (student) => {
     const targetEmail = student.email;
-    const mailSubject = encodeURIComponent('CareerPathAI Assessment Summary Results');
+    const mailSubject = encodeURIComponent('Eluci Assessment Summary Results');
     const bodyLines = [`Dear ${student.name},`, ''];
     if (student.status === 'Completed') {
       bodyLines.push('We have compiled your diagnostic assessment matrix details.');
@@ -949,7 +949,7 @@ export default function StudentResults({ onNavigate, onLogout }) {
       {createPortal(
         <div className="results-print-area bg-white text-gray-900 text-left font-['Inter',sans-serif] antialiased">
           <div className="print-avoid flex items-center justify-between pb-5 border-b-2 border-[#FFD2F7]">
-            <img src="/logoo.png" alt="CareerPathAI" className="h-14 w-auto object-contain" />
+            <img src="/logoo.png" alt="Eluci" className="h-14 w-auto object-contain" />
             <div className="text-right text-[13px] text-gray-500 font-medium">
               <div>{(printedAt || new Date()).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</div>
               <div>{(printedAt || new Date()).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}</div>
@@ -1074,12 +1074,12 @@ export default function StudentResults({ onNavigate, onLogout }) {
           </div>
 
           <div className="print-avoid pt-8 mt-10 border-t border-gray-200 flex items-center justify-between">
-            <p className="text-[11px] text-gray-400 mb-8">© {new Date().getFullYear()} CareerPathAI. All rights reserved.</p>
+            <p className="text-[11px] text-gray-400 mb-8">© {new Date().getFullYear()} Eluci. All rights reserved.</p>
             <div className="text-center">
               <div className="flex justify-center -mb-2"><Signature width={180} /></div>
               <div className="w-[200px] border-b border-gray-400 mb-1.5 mx-auto"></div>
               <p className="text-[13px] font-semibold text-gray-700">Authorized Signature</p>
-              <p className="text-[12px] text-gray-400">CareerPath AI Team</p>
+              <p className="text-[12px] text-gray-400">Eluci Team</p>
             </div>
           </div>
         </div>,

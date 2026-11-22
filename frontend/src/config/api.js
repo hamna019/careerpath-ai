@@ -1,4 +1,4 @@
-// Centralized API Configuration for CareerPath AI
+// Centralized API Configuration for Eluci
 // In local development, defaults to 'http://127.0.0.1:8000/api'
 // In production (Vercel/Netlify), reads from VITE_API_BASE_URL environment variable
 
